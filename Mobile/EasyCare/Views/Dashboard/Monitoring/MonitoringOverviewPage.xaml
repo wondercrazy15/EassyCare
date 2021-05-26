@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyCare.Views.Dashboard.Monitoring.MonitoringOverviewPage"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" xmlns:ffimageLoader="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:ffimageTransform="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
+        <!-- Resources -->
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+      </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Orientation="Horizontal" Grid.Column="0">
+              
+                       <ffimageLoader:CachedImage HeightRequest="40"
+                                              Aspect="AspectFill"
+                                           WidthRequest="40"
+                                           x:Name="imageSelect"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            Source="{Binding Imagepath}"
+                                                LoadingPlaceholder="User.png"
+                                            ErrorPlaceholder="User.png">
+                                            <ffimageLoader:CachedImage.Transformations>
+                                                <ffimageTransform:CircleTransformation />
+                                            </ffimageLoader:CachedImage.Transformations>                  
+                    </ffimageLoader:CachedImage>
+             
+              
+                <Label Style="{StaticResource NavigationBarLabelStyle}" Text="{Binding Senior.FirstName}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Grid.Column="1">	
+                <buttons:SfButton  Style="{StaticResource NavigationBarRedButtonStyle}"	
+                                   Text="{StaticResource Notification}"	
+                                   Command="{Binding ShowNotificationsCommand}"	
+                                   Clicked="Notifications_Clicked"/>	
+                <buttons:SfButton  Style="{StaticResource NavigationBarButtonStyle}"
+                                   Text="{StaticResource Settings}" Command="{Binding ShowSettingsCommand}"
+                                   Clicked="Settings_Clicked"/>	
+            </StackLayout>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0">
+
+                <!-- Activity -->
+                <buttons:SfButton Style="{StaticResource MonitoringMainButtonStyle}" Margin="5,5,5,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" VerticalOptions="StartAndExpand">
+                                <Image.Source>
+                                    <FontImageSource Glyph="{StaticResource Activity}" 
+                                                        Color="#1B3392" Size="40"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}" />
+                                </Image.Source>
+                            </Image>
+                       
+                        <StackLayout Grid.Column="1">
+                            <Label Style="{StaticResource MainButtonHeaderLabelStyle}" Text="Aktivität"/>
+                            <Label Style="{StaticResource MainButtonValueLabelStyle}" Text="{Binding Sensors.StepCount}"/>
+                            <Label Style="{StaticResource MainButtonDescriptionLabelStyle}" Text="momentaner Zustand"/>
+                        </StackLayout>
+                    </Grid>
+                </buttons:SfButton>
+                
+                <!-- Heart Rate-->
+                <buttons:SfButton Style="{StaticResource MonitoringMainButtonStyle}" Margin="5,5,5,0"
+                                  Command="{Binding ShowHeartRateCommand}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" VerticalOptions="StartAndExpand">
+                                <Image.Source>
+                                    <FontImageSource Glyph="{StaticResource HeartRate}" 
+                                                        Color="#1B3392" Size="40"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}" />
+                                </Image.Source>
+                            </Image>
+                       
+                        <StackLayout Grid.Column="1">
+                            <Label Style="{StaticResource MainButtonHeaderLabelStyle}" Text="Puls"/>
+                            <Label Style="{StaticResource MainButtonValueLabelStyle}" Text="{Binding Sensors.HeartRate}"/>
+                            <Label Style="{StaticResource MainButtonDescriptionLabelStyle}" Text="Schläge pro Minute"/>
+                        </StackLayout>
+                    </Grid>
+                </buttons:SfButton>
+
+                <!-- Location -->
+                <buttons:SfButton Style="{StaticResource MonitoringMainButtonStyle}" Margin="5,5,5,0"
+                                  Command="{Binding ShowLocationCommand}" Clicked="Location_Clicked">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalOptions="StartAndExpand">
+                                <Image.Source>
+                                    <FontImageSource Glyph="{StaticResource Location}" 
+                                                        Color="#1B3392" Size="40"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}" />
+                                </Image.Source>
+                            </Image>
+                        <StackLayout Grid.Column="1">
+                            <Label Style="{StaticResource MainButtonHeaderLabelStyle}" Text="Standort"/>
+                            <Label Style="{StaticResource MainButtonValueLabelStyle}" Text="{Binding Sensors.Location}"/>
+                            <Label Style="{StaticResource MainButtonDescriptionLabelStyle}" Text="Ort"/>
+                        </StackLayout>
+                    </Grid>
+                </buttons:SfButton>
+
+                <!-- Movement -->
+                <buttons:SfButton Style="{StaticResource MonitoringMainButtonStyle}" Margin="5,5,5,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalOptions="StartAndExpand">
+                                <Image.Source>
+                                    <FontImageSource Glyph="{StaticResource Movement}" 
+                                                        Color="#1B3392" Size="40"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}" />
+                                </Image.Source>
+                            </Image>
+                        <StackLayout Grid.Column="1">
+                            <Label Style="{StaticResource MainButtonHeaderLabelStyle}" Text="Schritte"/>
+                            <!--<Label Style="{StaticResource MainButtonValueLabelStyle}" Text="Placeholder"/>-->
+                            <Label Style="{StaticResource MainButtonDescriptionLabelStyle}" Text="Letzte Bewegung"/>
+                        </StackLayout>
+                    </Grid>
+                </buttons:SfButton>
+
+                <!-- Medicine -->
+                <buttons:SfButton Style="{StaticResource MonitoringMainButtonStyle}" Margin="5,5,5,0" Clicked="SfButton_Clicked">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" VerticalOptions="StartAndExpand" >
+                                <Image.Source>
+                                    <FontImageSource Glyph="{StaticResource Medicin}" 
+                                                         Color="#1B3392" Size="40"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}" />
+                                </Image.Source>
+                            </Image>
+
+                        <StackLayout Grid.Column="1">
+                            <Label Style="{StaticResource MainButtonHeaderLabelStyle}" Text="Medikamente"/>
+                            <!--<Label Style="{StaticResource MainButtonValueLabelStyle}" Text="Placeholder"/>-->
+                            <Label Style="{StaticResource MainButtonDescriptionLabelStyle}" Text="Morgens - Mittags - Abends"/>
+                        </StackLayout>
+
+                    </Grid>
+
+                </buttons:SfButton>
+
+                <!-- Battery -->
+                <buttons:SfButton Style="{StaticResource MonitoringMainButtonStyle}" Margin="5,5,5,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                         <Image Grid.Column="0" VerticalOptions="StartAndExpand">
+                                <Image.Source>
+                                    <FontImageSource Glyph="{StaticResource Battery}" 
+                                                        Color="#1B3392" Size="40"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}" />
+                                </Image.Source>
+                            </Image>
+                        <StackLayout Grid.Column="1" >
+                            <Label VerticalTextAlignment="Center" Style="{StaticResource MainButtonHeaderLabelStyle}" Text="Batterie"/>
+                            <Label Style="{StaticResource MainButtonValueLabelStyle}" Text="{Binding Sensors.BatterySoC}"/>
+                            <Label Style="{StaticResource MainButtonDescriptionLabelStyle}" />
+                        </StackLayout>
+                    </Grid>
+                </buttons:SfButton>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

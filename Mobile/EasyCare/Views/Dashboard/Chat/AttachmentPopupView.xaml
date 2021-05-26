@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local1:CustomGrid  xmlns:local1="clr-namespace:EasyCare.Views.Dashboard.Chat"
+                    xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyCare.Views.Dashboard.Chat.AttachmentPopupView"
+                    xmlns:local="clr-namespace:EasyCare.Views.Dashboard.Chat" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+                  BackgroundColor="White"
+                  RowSpacing="5"
+                    Padding="15,25,15,0"
+                    HeightRequest="250"
+                   VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                  ColumnSpacing="15">
+    <local1:CustomGrid.Resources>
+        <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </local1:CustomGrid.Resources>
+    <local:CustomGrid.RowDefinitions>
+        <RowDefinition Height="*"></RowDefinition>
+        <RowDefinition Height="*"></RowDefinition>
+    </local:CustomGrid.RowDefinitions>
+
+    <local:CustomGrid.ColumnDefinitions>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+    </local:CustomGrid.ColumnDefinitions>
+
+    <StackLayout  Orientation="Vertical" Grid.Row="0" Grid.Column="0" Spacing="0">
+        <Frame Margin="5" HeightRequest="50" HasShadow="False" VerticalOptions="FillAndExpand" CornerRadius="14" BorderColor="Black" HorizontalOptions="Fill" Padding="0">
+             <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE71e;" 
+                                                        Color="#323853"
+                                                       FontFamily="{StaticResource FontIcons}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+       
+
+        <Label FontSize="14" TextColor="#323853" Margin="0,5" x:Name="label1" Text="Medien" HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer
+                Tapped="AttachmentTapped"
+                NumberOfTapsRequired="1" />
+        </StackLayout.GestureRecognizers>
+    </StackLayout>
+
+
+    <StackLayout  Orientation="Vertical" Grid.Row="0" Grid.Column="1" Spacing="0">
+        <Frame Margin="5" Padding="0"  HeightRequest="50" VerticalOptions="FillAndExpand"
+               CornerRadius="14" BorderColor="LightGray" HasShadow="False" HorizontalOptions="Fill" >
+             <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE928;" 
+                                                        Color="#323853"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+        <Label  FontSize="14" TextColor="#323853" Margin="0,5" x:Name="label2" Text="Termin" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer
+                Tapped="CalenderTapped"
+                NumberOfTapsRequired="1" />
+        </StackLayout.GestureRecognizers>
+    </StackLayout>
+
+    <StackLayout  Orientation="Vertical" Grid.Row="0" Grid.Column="2" Spacing="0">
+         <Frame Margin="5" HeightRequest="50" VerticalOptions="FillAndExpand" CornerRadius="14" BorderColor="LightGray" HasShadow="False" HorizontalOptions="Fill" Padding="0">
+             <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE90C;" 
+                                                        Color="LightGray"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+        <Label FontSize="14" TextColor="#323853" Margin="0,5" x:Name="label3" Text="Aktivitat" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer
+                Tapped="ActivityTapped"
+                NumberOfTapsRequired="1" />
+        </StackLayout.GestureRecognizers>
+    </StackLayout>
+
+    <StackLayout  Orientation="Vertical" Grid.Row="0" Grid.Column="3" Spacing="0">
+         <Frame Margin="5"  HeightRequest="50" VerticalOptions="FillAndExpand" CornerRadius="14" BorderColor="LightGray" HasShadow="False" HorizontalOptions="Fill" Padding="0">
+             <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE91D;" 
+                                                        Color="LightGray"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+        <Label FontSize="14" TextColor="#323853" Margin="0,5" x:Name="Pulse" Text="Pulse" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+        
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer
+                Tapped="PulseTapped"
+                NumberOfTapsRequired="1" />
+        </StackLayout.GestureRecognizers>
+    </StackLayout>
+
+    <StackLayout  Orientation="Vertical" Grid.Row="1" Grid.Column="0" Spacing="0">
+        <Frame  Margin="5" HeightRequest="50" VerticalOptions="FillAndExpand" CornerRadius="14" BorderColor="LightGray" HasShadow="False" HorizontalOptions="Fill" Padding="0">
+             <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE903;" 
+                                                        Color="LightGray"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+        <Label FontSize="14" TextColor="#323853" Margin="0,5" x:Name="label5" Text="Standort" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer
+                Tapped="LocationTapped"
+                NumberOfTapsRequired="1" />
+        </StackLayout.GestureRecognizers>
+    </StackLayout>
+
+    <StackLayout  Orientation="Vertical" Grid.Row="1" Grid.Column="1" Spacing="0">
+         <Frame Margin="5" HeightRequest="50" VerticalOptions="FillAndExpand" CornerRadius="14" BorderColor="LightGray" HasShadow="False" HorizontalOptions="Fill" Padding="0">
+             <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE910;" 
+                                                        Color="LightGray"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+        <Label  FontSize="14" TextColor="#323853" Margin="0,5" x:Name="label6" Text="Schritte" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer
+                Tapped="StepsTapped"
+                NumberOfTapsRequired="1" />
+        </StackLayout.GestureRecognizers>
+         
+    </StackLayout>
+
+    <StackLayout  Orientation="Vertical" Grid.Row="1" Grid.Column="2" Spacing="0">
+         <Frame Margin="5" HeightRequest="50" VerticalOptions="FillAndExpand" CornerRadius="14" BorderColor="LightGray" HasShadow="False" HorizontalOptions="Fill" Padding="0">
+             <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE91C;" 
+                                                        Color="LightGray"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+        <Label FontSize="14" TextColor="#323853" Margin="0,5" x:Name="label7" MaxLines="1" Text="Medikament" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer
+                Tapped="MedicalTapped"
+                NumberOfTapsRequired="1" />
+        </StackLayout.GestureRecognizers>
+    </StackLayout>
+
+    <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column="3" Spacing="0">
+        <Frame  Margin="5"  HeightRequest="50" VerticalOptions="FillAndExpand" BorderColor="LightGray" HasShadow="False"
+                CornerRadius="14"  HorizontalOptions="Fill" Padding="0">
+             <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE921;" 
+                                                        Color="LightGray"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+        <Label FontSize="14" TextColor="#323853" Margin="0,5" x:Name="Uhr" Text="Uhr" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+
+        <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer
+                Tapped="BatteryTapped"
+                NumberOfTapsRequired="1" />
+        </StackLayout.GestureRecognizers>
+
+    </StackLayout>
+
+</local1:CustomGrid>

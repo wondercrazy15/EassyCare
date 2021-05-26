@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:ffimageLoader="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+          xmlns:ffimageTransform="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+          xmlns:control="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+          x:Class="EasyCare.Views.Dashboard.Chat.Cells.IncomingViewCell">
+
+    <Grid FlowDirection="LeftToRight"  Rotation="180" Margin="0,0,0,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <control:PancakeView BackgroundColor="#5A89FF" Style="{StaticResource LightShadowPancakeViewStyle}"
+                         HasShadow="True"
+                                           HorizontalOptions="End"
+                       Grid.Column="1"
+             CornerRadius="15"
+                         Padding="5">
+
+
+            <StackLayout Spacing="0">
+                <StackLayout Spacing="0" VerticalOptions="FillAndExpand" IsVisible="{Binding IsImage}">
+                    <ffimageLoader:CachedImage HeightRequest="200"
+                                           IsVisible="{Binding IsImage}"
+                                           WidthRequest="230"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="StartAndExpand"
+                                           Source="{Binding ActualImage}" >
+                        <ffimageLoader:CachedImage.Margin>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="Android" Value="7,0,0,0"/>
+                                <On Platform="iOS" Value="5"/>
+                            </OnPlatform>
+                        </ffimageLoader:CachedImage.Margin>
+                    </ffimageLoader:CachedImage>
+                    <Label HorizontalOptions="EndAndExpand"  
+                      TextColor="White" VerticalOptions="EndAndExpand" HorizontalTextAlignment="End"
+                      VerticalTextAlignment="End" FontSize="9" MaxLines="1" Text="{Binding DisTime}"/>
+                </StackLayout>
+
+                <StackLayout Spacing="-8" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding IsMesseges}">
+
+                    <Label Text="{Binding Message}"   Padding="5" HorizontalOptions="End"  TextColor="White"/>
+                    <Label HorizontalOptions="EndAndExpand"  
+                      TextColor="White" VerticalOptions="EndAndExpand" WidthRequest="60" HorizontalTextAlignment="End"
+                      VerticalTextAlignment="End" FontSize="9" MaxLines="1" Text="{Binding DisTime}"/>
+                </StackLayout>
+
+                <StackLayout x:Name="Document" Spacing="-8" Orientation="Horizontal" VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand" IsVisible="{Binding IsotherMedia}">
+
+                    <Label Text="{Binding Message}"   Padding="5" HorizontalOptions="End"  TextColor="White"/>
+                    <Label x:Name="imagePath" Text="{Binding ImagePath}" IsVisible="false"  Padding="5" HorizontalOptions="End"  TextColor="White"/>
+                    <Label HorizontalOptions="EndAndExpand"  
+                      TextColor="White" VerticalOptions="EndAndExpand" WidthRequest="60" HorizontalTextAlignment="End"
+                      VerticalTextAlignment="End" FontSize="9" MaxLines="1" Text="{Binding DisTime}"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="{Binding ImagePath}"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Spacing="0"  Orientation="Horizontal" VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand" IsVisible="{Binding IsCalender}">
+                    <Image VerticalOptions="Start">
+                        <Image.Source>
+                            <FontImageSource Glyph="&#xE928;" 
+                                                        Color="White"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="40" />
+                        </Image.Source>
+                    </Image>
+                    <control:PancakeView Margin="10,0,0,0" HorizontalOptions="Fill"  BackgroundColor="White"
+                                     CornerRadius="10">
+                        <StackLayout Padding="5,0,2,0"   
+                            Orientation="Horizontal" Spacing="0">
+                            <Image >
+                                <Image.Source>
+                                    <FontImageSource Glyph="{Binding Icon}" 
+                                                        Color="#323853"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="37" />
+                                </Image.Source>
+                            </Image>
+                            <Label Text="{Binding Message}" HorizontalTextAlignment="Start" Margin="5,0,5,0" FontSize="Body"
+                                Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="Black"/>
+                            <StackLayout Spacing="0"   IsVisible="{Binding IsMemberVisible}"
+                                      HorizontalOptions="End"
+                                            VerticalOptions="CenterAndExpand"  HeightRequest="70"
+                                      WidthRequest="80">
+                                <Grid  x:Name="ImageBackground" VerticalOptions='FillAndExpand'
+                                      HorizontalOptions="FillAndExpand" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Row="0"  Source="BackgroundLogo" 
+                                       BackgroundColor="Transparent"
+                                      />
+                                    <ffimageLoader:CachedImage HeightRequest="45"  
+                                            Grid.Row="0"
+                                           WidthRequest="40"
+                                          Margin="0,0,10,5"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="End"
+                                           LoadingPlaceholder="User.png"
+                                                                 ErrorPlaceholder="User.png"
+                                           Source="{Binding MemberImagePath}" >
+                                        <ffimageLoader:CachedImage.Transformations>
+                                            <ffimageTransform:CircleTransformation />
+                                        </ffimageLoader:CachedImage.Transformations>
+                                    </ffimageLoader:CachedImage>
+                                </Grid>
+                            </StackLayout>
+                        </StackLayout>
+                    </control:PancakeView>
+
+                    <Label HorizontalOptions="EndAndExpand" 
+                      TextColor="White" VerticalOptions="EndAndExpand" WidthRequest="60" HorizontalTextAlignment="End"
+                      VerticalTextAlignment="End" FontSize="9" MaxLines="1" Text="{Binding DisTime}"/>
+                </StackLayout>
+            </StackLayout>
+        </control:PancakeView>
+        <ffimageLoader:CachedImage HeightRequest="40"
+                                              Aspect="AspectFill"
+                                           WidthRequest="40"
+                                           x:Name="imageSelect"
+                                             Grid.Column="2"
+                                           
+                                           HorizontalOptions="EndAndExpand"
+                                           VerticalOptions="Start"
+                                            Source="{Binding ProfileImagePath}"
+                                                LoadingPlaceholder="User.png"
+                                            ErrorPlaceholder="User.png">
+            <ffimageLoader:CachedImage.Transformations>
+                <ffimageTransform:CircleTransformation />
+            </ffimageLoader:CachedImage.Transformations>
+
+            <ffimageLoader:CachedImage.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="Android" Value="7,0,0,0"/>
+                    <On Platform="iOS" Value="5"/>
+                </OnPlatform>
+            </ffimageLoader:CachedImage.Margin>
+        </ffimageLoader:CachedImage>
+
+
+    </Grid>
+
+</ViewCell>

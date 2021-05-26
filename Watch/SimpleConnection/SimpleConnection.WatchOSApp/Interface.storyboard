@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097.2" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <button alignment="left" id="2Oq-NS-cR3">
+                            <group key="contentGroup" width="1" height="0.69999999999999996" alignment="left" backgroundImage="Emblem" contentMode="scaleAspectFit" id="Kqn-T8-JhJ">
+                                <color key="backgroundColor" red="0.80784313730000001" green="0.1450980392" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </group>
+                            <connections>
+                                <action selector="EmergencyButtonClick" destination="AgC-eL-Hgc" id="Ejs-Zp-Pvs"/>
+                            </connections>
+                        </button>
+                        <button width="1" height="0.29999999999999999" alignment="left" title="Smartphone koppeln" id="dip-r5-fNa">
+                            <color key="titleColor" red="0.3411764705882353" green="0.96862745098039216" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.0" green="0.23137254901960785" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="PairButtonClick" destination="AgC-eL-Hgc" id="4Sr-Il-sOM"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="PairButton" destination="dip-r5-fNa" id="jPe-Ea-idp"/>
+                        <outlet property="myButton" destination="2Oq-NS-cR3" id="ecE-gV-gpq"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="231" y="0.0"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController"/>
+            </objects>
+            <point key="canvasLocation" x="462" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Emblem" width="408" height="304"/>
+    </resources>
+</document>

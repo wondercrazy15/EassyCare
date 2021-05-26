@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:control="clr-namespace:EasyCare.Controls"
+             xmlns:converter="clr-namespace:EasyCare.Converters"
+             xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             x:Class="EasyCare.PairPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+     </ContentPage.Resources>
+
+    <StackLayout Margin="{core:OnPlatformOrientationThickness PhonePortrait='20,32',
+        PhoneLandscape='150,32',
+        TabletPortrait='200,50',
+        TabletLandscape='300,50',
+        Desktop='30'}"
+                 VerticalOptions="CenterAndExpand"
+                 Spacing="0">
+
+        <Label  x:Name="PairPageLabel"
+                Style="{StaticResource LabelStyle}"
+                Text="Bitte tragen Sie die auf der Smartwatch dargestellte TAN ein:"/>
+        <inputLayout:SfTextInputLayout Style="{StaticResource TextInputLayout}" Hint="TAN">
+            <Entry x:Name="WatchTAN_Editor"
+                IsVisible="True"
+                Keyboard="Numeric"
+                TextChanged="WatchTAN_TextChanged"
+                MaxLength="4"/>
+        </inputLayout:SfTextInputLayout>
+       
+        <buttons:SfButton x:Name="PairButton"
+                          Style="{StaticResource ButtonStyle}"
+                          Text="Koppeln"
+                          Clicked="PairButton_Pressed"
+                          IsVisible="false"/>
+        <Label x:Name="PairingResultLabel"
+               Style="{StaticResource LabelStyle}"
+               IsVisible="false" />
+        <buttons:SfButton x:Name="MainMenuButton"
+                          Style="{StaticResource ButtonStyle}"
+                          Text="Hauptmenü"
+                          Clicked="MainMenuButton_Pressed"
+                          IsVisible="False"/>
+    </StackLayout>
+</ContentPage>

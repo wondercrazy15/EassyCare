@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    x:Class="EasyCare.UserPage">
+
+        <ContentPage.Resources>
+        <!-- Implicit Stryles-->
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource White}"/>
+            <Setter Property="TextColor"
+                    Value="{StaticResource MischkaBlue}"/>
+            <Setter Property="FontAttributes"
+                    Value="Bold"/>
+            <Setter Property="FontSize"
+                    Value="Large"/>
+        </Style>
+     </ContentPage.Resources>
+
+    <StackLayout Margin="{core:OnPlatformOrientationThickness PhonePortrait='20,32',
+        PhoneLandscape='150,32',
+        TabletPortrait='200,50',
+        TabletLandscape='300,50',
+        Desktop='30'}">
+
+        <StackLayout 
+                 VerticalOptions="CenterAndExpand"
+                 Spacing="0">
+
+        <Label x:Name="WelcomeLabel" FontSize="27" TextColor="#565D87" Text="Registrierung erfolgreich!"/>
+       
+            
+        </StackLayout>
+
+        <buttons:SfButton
+                        x:Name="RegisterButton"
+                        Clicked="ConfirmButton_Clicked"
+                        FontSize="18"
+                         VerticalOptions="End"
+                        HeightRequest="65"
+                        CornerRadius="45"
+                        TextColor="White"
+                        BackgroundColor="{StaticResource MischkaBlue}"
+                        Text="ZURUCK ANMELDUNG"
+                       />
+    </StackLayout>
+    
+</ContentPage>

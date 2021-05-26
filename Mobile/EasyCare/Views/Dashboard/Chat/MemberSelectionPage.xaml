@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:ffimageLoader="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ffimageTransform="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             Title="New Chat Group" NavigationPage.BackButtonTitle=""
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" x:Class="EasyCare.Views.Dashboard.Chat.MemberSelectionPage">
+    <ContentPage.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </ContentPage.Resources>
+   
+    <ContentPage.Content>
+       <StackLayout>
+           <StackLayout Orientation="Vertical" Margin="20">
+                <Frame CornerRadius="50" 
+                       HeightRequest="100"
+                       WidthRequest="100"
+                       HorizontalOptions="Center"
+                       Padding="0"
+                       IsClippedToBounds="True">
+                    <Image
+                       x:Name="imageSelect"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" >
+                       
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE70e;" 
+                                                         Color="#323853"
+                                                       FontFamily="{StaticResource FontIcons}"
+                                                        Size="50" />
+                  </Image.Source>
+           
+                    </Image>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer  Tapped="TapGestureRecognizer_Tapped">
+
+                        </TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+            </StackLayout>
+            <StackLayout Margin="20,10,20,0" Spacing="10">
+                <Entry Text="{Binding GroupName}" Placeholder="Group Name"></Entry>
+                <Entry Text="{Binding GroupKey}" Placeholder="Group Key"></Entry>
+                <Label  x:Name="GroupCreatedSuccessfullLabel"
+                        HorizontalTextAlignment="Center"
+                        FontSize="Medium"
+                        Text="Enter Group Name, Group Key and Image"
+                        BackgroundColor="White"
+                        TextColor="Red"
+                        IsVisible="{Binding IsShowError}"/>
+
+        <syncfusion:SfButton
+                        x:Name="RegisterButton"
+                        FontSize="18"
+                         VerticalOptions="End"
+                        HeightRequest="40"
+                        CornerRadius="10"
+                        TextColor="White"
+                        Command="{Binding CreateGroup}"
+                        BackgroundColor="{StaticResource MischkaBlue}"
+                        Text="Create Group"
+                       />
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

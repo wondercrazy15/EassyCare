@@ -1,0 +1,292 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/imac/Development/Live Project/EasyCare/New/easycare/Watch/SimpleConnection/SimpleConnection.WatchOSExtension/SimpleConnection.WatchOSExtension.csproj": {}
+  },
+  "projects": {
+    "/Users/imac/Development/Live Project/EasyCare/New/easycare/Core/EasyCare.Core/EasyCare.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Core/EasyCare.Core/EasyCare.Core.csproj",
+        "projectName": "EasyCare.Core",
+        "projectPath": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Core/EasyCare.Core/EasyCare.Core.csproj",
+        "packagesPath": "/Users/imac/.nuget/packages/",
+        "outputPath": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Core/EasyCare.Core/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder",
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/imac/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "/Users/imac/Downloads/Telerik_UI_for_Xamarin_2020_3_1106_1_Dev_NuGet_Separate_Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/imac/Development/Live Project/EasyCare/New/easycare/Watch/SimpleConnection/SimpleConnection.WatchOSExtension/SimpleConnection.WatchOSExtension.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Watch/SimpleConnection/SimpleConnection.WatchOSExtension/SimpleConnection.WatchOSExtension.csproj",
+        "projectName": "SimpleConnectionWatchOSExtension",
+        "projectPath": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Watch/SimpleConnection/SimpleConnection.WatchOSExtension/SimpleConnection.WatchOSExtension.csproj",
+        "packagesPath": "/Users/imac/.nuget/packages/",
+        "outputPath": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Watch/SimpleConnection/SimpleConnection.WatchOSExtension/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/imac/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "xamarinwatchos10"
+        ],
+        "sources": {
+          "/Users/imac/Downloads/Telerik_UI_for_Xamarin_2020_3_1106_1_Dev_NuGet_Separate_Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "xamarinwatchos10": {
+            "projectReferences": {
+              "/Users/imac/Development/Live Project/EasyCare/New/easycare/Core/EasyCare.Core/EasyCare.Core.csproj": {
+                "projectPath": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Core/EasyCare.Core/EasyCare.Core.csproj"
+              },
+              "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Client/EasyCare.Client.csproj": {
+                "projectPath": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Client/EasyCare.Client.csproj"
+              },
+              "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Core.Dto/EasyCare.Core.Dto.csproj": {
+                "projectPath": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Core.Dto/EasyCare.Core.Dto.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "xamarinwatchos10": {
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.Azure.Devices": {
+              "target": "Package",
+              "version": "[1.22.0, )"
+            },
+            "Microsoft.Azure.Devices.Client": {
+              "target": "Package",
+              "version": "[1.27.0, )"
+            },
+            "Microsoft.Azure.Devices.Provisioning.Client": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "Microsoft.Azure.Devices.Shared": {
+              "target": "Package",
+              "version": "[1.20.1, )"
+            },
+            "Microsoft.Azure.Mobile.Client": {
+              "target": "Package",
+              "version": "[4.1.2, )"
+            },
+            "Microsoft.Azure.Mobile.Client.SQLiteStore": {
+              "target": "Package",
+              "version": "[4.1.2, )"
+            },
+            "Microsoft.Azure.NotificationHubs": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.5.3.2, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Client/EasyCare.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Client/EasyCare.Client.csproj",
+        "projectName": "EasyCare.Client",
+        "projectPath": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Client/EasyCare.Client.csproj",
+        "packagesPath": "/Users/imac/.nuget/packages/",
+        "outputPath": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Client/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder",
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/imac/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "/Users/imac/Downloads/Telerik_UI_for_Xamarin_2020_3_1106_1_Dev_NuGet_Separate_Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "/Users/imac/Development/Live Project/EasyCare/New/easycare/Core/EasyCare.Core/EasyCare.Core.csproj": {
+                "projectPath": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Core/EasyCare.Core/EasyCare.Core.csproj"
+              },
+              "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Core.Dto/EasyCare.Core.Dto.csproj": {
+                "projectPath": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Core.Dto/EasyCare.Core.Dto.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Core.Dto/EasyCare.Core.Dto.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Core.Dto/EasyCare.Core.Dto.csproj",
+        "projectName": "EasyCare.Core.Dto",
+        "projectPath": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Core.Dto/EasyCare.Core.Dto.csproj",
+        "packagesPath": "/Users/imac/.nuget/packages/",
+        "outputPath": "/Users/imac/Development/Live Project/EasyCare/New/easycare/Web/EasyCare.Core.Dto/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder",
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/imac/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "/Users/imac/Downloads/Telerik_UI_for_Xamarin_2020_3_1106_1_Dev_NuGet_Separate_Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.DataAnnotations": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

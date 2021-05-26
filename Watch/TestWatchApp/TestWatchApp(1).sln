@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWatchApp", "TestWatchApp.csproj", "{C2741A36-A721-491D-93C9-E4074A4A5487}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2741A36-A721-491D-93C9-E4074A4A5487}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{C2741A36-A721-491D-93C9-E4074A4A5487}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{C2741A36-A721-491D-93C9-E4074A4A5487}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{C2741A36-A721-491D-93C9-E4074A4A5487}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{C2741A36-A721-491D-93C9-E4074A4A5487}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{C2741A36-A721-491D-93C9-E4074A4A5487}.Debug|iPhone.Build.0 = Debug|iPhone
+		{C2741A36-A721-491D-93C9-E4074A4A5487}.Release|iPhone.ActiveCfg = Release|iPhone
+		{C2741A36-A721-491D-93C9-E4074A4A5487}.Release|iPhone.Build.0 = Release|iPhone
+	EndGlobalSection
+EndGlobal

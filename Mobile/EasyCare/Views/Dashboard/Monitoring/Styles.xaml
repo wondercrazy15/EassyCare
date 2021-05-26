@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    x:Class="EasyCare.Views.Dashboard.Monitoring.Styles"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:control="clr-namespace:EasyCare.Controls"
+    xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms">
+
+    <Color x:Key="Transparent">Transparent</Color>
+
+    <!--  Font Icon Text  -->
+    <x:String x:Key="Home">&#xe706;</x:String>
+    <x:String x:Key="Calendar">&#xe742;</x:String>
+    <x:String x:Key="Chat">&#xe73b;</x:String>
+    <x:String x:Key="Notification">&#xe700;</x:String>
+    <x:String x:Key="Settings">&#xe72b;</x:String>
+    <x:String x:Key="LeftArrow">&#xe709;</x:String>
+     <x:String x:Key="RightArrow">&#xe71a;</x:String>
+     <x:String x:Key="Menu">&#xe719;</x:String>
+    <x:String x:Key="Back">&#xe709;</x:String>
+
+    <!-- EasyCare Icons-->
+    <x:String x:Key="EC_Supervisor">&#xe900;</x:String>
+    <x:String x:Key="EC_Phone">&#xe901;</x:String>
+    <x:String x:Key="EC_Phone2">&#xe910;</x:String>
+    <x:String x:Key="EC_Tree">&#xe911;</x:String>
+    <x:String x:Key="EC_Fall">&#xe912;</x:String>
+    <x:String x:Key="EC_HeartRateMeasure">&#xe913;</x:String>
+    <x:String x:Key="EC_Block">&#xe914;</x:String>
+    <x:String x:Key="EC_Block2">&#xe915;</x:String>
+    <x:String x:Key="EC_Chat">&#xe923;</x:String>
+    <x:String x:Key="EC_OK">&#xe924;</x:String>
+    <x:String x:Key="EC_Cloud">&#xe925;</x:String>
+    <x:String x:Key="EC_Home">&#xe926;</x:String>
+    <x:String x:Key="EC_Lock">&#xe927;</x:String>
+    <x:String x:Key="EC_WiFi">&#xe935;</x:String>
+    <x:String x:Key="EC_Net">&#xe936;</x:String>
+    <x:String x:Key="EC_Heart">&#xe937;</x:String>
+    <x:String x:Key="EC_Senior">&#xe938;</x:String>
+    <x:String x:Key="EC_Location">&#xe93c;</x:String>
+    <x:String x:Key="EC_Temperature">&#xe93d;</x:String>
+    <x:String x:Key="EC_Clock">&#xe93e;</x:String>
+    <x:String x:Key="EC_World">&#xe93f;</x:String>
+    <x:String x:Key="EC_Cloud2">&#xe940;</x:String>
+
+    <!--Regular icon-->
+    <x:String x:Key="HeartRate">&#xe91d;</x:String>
+    <x:String x:Key="Activity">&#xe90c;</x:String>
+    <x:String x:Key="Location">&#xe903;</x:String>
+    <x:String x:Key="Medicin">&#xe91c;</x:String>
+    <x:String x:Key="Battery">&#xe921;</x:String>
+    <x:String x:Key="Movement">&#xe910;</x:String>
+
+    <x:String x:Key="Morning">&#xe91f;</x:String>
+    <x:String x:Key="Afternoon">&#xe91e;</x:String>
+    <x:String x:Key="Evening">&#xe920;</x:String>
+    <x:String x:Key="Night">&#xe913;</x:String>
+
+    <Style x:Key="NavigationBarLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="Padding" Value="10,0" />
+    </Style>
+
+    <!--  Common style for Navigation bar SfButton  -->
+    <Style x:Key="NavigationBarButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-600}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="WidthRequest" Value="38" />
+        <Setter Property="HeightRequest" Value="38" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="FontFamily" Value="{StaticResource FontIcons}"/>
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderWidth" Value="0" />
+    </Style>
+
+    <Style x:Key="ButtonECIconStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource Easycareicons-Regular}"/>
+    </Style>
+
+    <Style x:Key="NavigationBarRedButtonStyle" TargetType="buttons:SfButton"
+           BasedOn="{StaticResource NavigationBarButtonStyle}">
+        <Setter Property="BackgroundColor" Value="{StaticResource LightRed}" />
+        <Setter Property="CornerRadius" Value="100" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <!--  Common style for Monitoring Main SfButton  -->
+    <Style x:Key="MonitoringMainButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="TextColor" Value="#0A144F" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="WidthRequest" Value="225" />
+        <Setter Property="HeightRequest" Value="100" />
+        <Setter Property="CornerRadius" Value="15" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="Margin"   Value="12" />
+        <Setter Property="BorderColor"  Value="#0A144F"/>
+    </Style>
+
+    <!--  Common style for Main SfButton Header Label -->
+    <Style x:Key="MainButtonHeaderLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-800}" />
+        <Setter Property="FontSize" Value="20" />
+        <!-- Default text-->
+        <Setter Property="Text" Value="Placeholder"/>
+    </Style>
+
+    <!--  Common style for Main SfButton Header Icon Label -->
+    <Style x:Key="MainButtonHeaderIconLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-800}" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontFamily" Value="{StaticResource easycare_icons}"/>
+    </Style>
+
+    <!--  Common style for Main SfButton Value Label -->
+    <Style x:Key="MainButtonValueLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-800}" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <!-- Default text-->
+        <!--<Setter Property="Text" Value="Placeholder"/>-->
+    </Style>
+
+    <!--  Common style for Main SfButton Description Label  -->
+    <Style x:Key="MainButtonDescriptionLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-700}" />
+        <Setter Property="FontSize" Value="16" />
+        <!-- Default text-->
+        <Setter Property="Text" Value="Placeholder"/>
+    </Style>
+
+
+    <Style x:Key="NotificationBaseStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+    
+    <Style x:Key="NotificationHeaderStyle" TargetType="Label"
+           BasedOn="{StaticResource NotificationBaseStyle}">
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="20" />
+    </Style>
+
+    <Style x:Key="NotificationGridHeaderStyle" TargetType="Label"
+           BasedOn="{StaticResource NotificationBaseStyle}">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Margin" Value="10,0" />
+    </Style>
+
+    <Style x:Key="NotificationTimeStyle" TargetType="Label"
+           BasedOn="{StaticResource NotificationBaseStyle}">
+
+    </Style>
+
+    <Style x:Key="NotificationDescriptionStyle" TargetType="Label"
+           BasedOn="{StaticResource NotificationBaseStyle}">
+
+    </Style>
+
+    <Style x:Key="NotificationMainContainerStyle" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Vertical"/>
+        <!--<Setter Property="VerticalOptions" Value="Center"/>-->
+    </Style>
+
+    <Style x:Key="NotificationFrameStyle" TargetType="BoxView">
+        <Setter Property="Color" Value="LightGray" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="EndAndExpand" />
+        <Setter Property="HeightRequest" Value="1" />
+    </Style>
+
+    <Style x:Key="NotificationContainerStyle" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="Padding" Value="10,5" />
+    </Style>
+
+    <Style x:Key="NotificationConfirmBtnStyle" TargetType="buttons:SfButton">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="TextColor" Value="{StaticResource LightRed}"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Margin" Value="40"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="VerticalOptions" Value="End" />
+    </Style>
+
+    <Style x:Key="ButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="WidthRequest" Value="38" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="FontFamily" Value="{StaticResource FontIcons}"/>
+        <Setter Property="BackgroundColor" Value="AliceBlue" />
+        <Setter Property="BorderWidth" Value="0" />
+    </Style>
+
+</ResourceDictionary>

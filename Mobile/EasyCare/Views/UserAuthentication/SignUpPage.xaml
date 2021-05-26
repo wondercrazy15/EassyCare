@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyCare.Views.UserAuthentication.SignUpPage"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:control="clr-namespace:EasyCare.Controls"
+             xmlns:converter="clr-namespace:EasyCare.Converters"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             Title="Sign Up">
+     <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+     </ContentPage.Resources>
+
+
+     <ContentPage.Content>
+        <ScrollView x:Name="scrollView">
+                <StackLayout
+                Margin="20,0"
+                Spacing="0"
+                VerticalOptions="Start">
+
+                <StackLayout    Margin="{StaticResource PageMargin}">
+                    <!--  Get name from user  -->
+                    <StackLayout HorizontalOptions="Start" Margin="0,0,0,0" >
+                         <Image>
+                                   <Image.Source>
+                                       <FontImageSource Glyph="&#xe709;" 
+                                                        Color="#64E9F7"
+                                                        FontFamily="{StaticResource FontIcons}"
+                                                        Size="24" />
+                                   </Image.Source>
+                               </Image>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="BackButton_Clicked"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <Frame Margin="15" HasShadow="False" BackgroundColor="#F6F7FD" CornerRadius="52" Padding="15">
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                            <Grid RowSpacing="0" ColumnSpacing="0" HorizontalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition> 
+                                </Grid.ColumnDefinitions>
+
+                                <Frame x:Name="ExistingFrame" Padding="5,15" Grid.Column="0" CornerRadius="32" HasShadow="False" BackgroundColor="#CF3352">
+                                    <StackLayout Spacing="0" VerticalOptions="Center">
+                                        <Label x:Name="lblExisting" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="13" FontFamily="{StaticResource Montserrat-SemiBold}" TextColor="White" VerticalOptions="Center" Text="BESTEHENDE" MaxLines="1"></Label>
+                                        <Label x:Name="lblExistingGroup" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="13" FontFamily="{StaticResource Montserrat-SemiBold}" TextColor="White" VerticalOptions="Center" Text="PFLEGEGRUPPE" MaxLines="1"></Label>
+                                    </StackLayout>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ExistingFrame_Tapped"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                                 <Frame x:Name="NewFrame" Padding="9,15" Grid.Column="1" CornerRadius="32" HasShadow="False" BackgroundColor="Transparent">
+                                    <StackLayout Spacing="0" >
+                                        <Label x:Name="lblNew" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="13" FontFamily="{StaticResource Montserrat-SemiBold}" TextColor="#0A144F" VerticalOptions="Center" Text="NEUE" MaxLines="1"></Label>
+                                        <Label x:Name="lblNewGroup" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="13" FontFamily="{StaticResource Montserrat-SemiBold}" TextColor="#0A144F" VerticalOptions="Center" Text="PFLEGEGRUPPE" MaxLines="1"></Label>
+                                    </StackLayout>
+                                     <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="NewFrame_Tapped"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout Margin="0,25,0,40" HeightRequest="85">
+                       <inputLayout:SfTextInputLayout IsVisible="true"  Style="{StaticResource TextInputLayout}" Hint="Pflegegruppen-Schlussel aus Einladung" x:Name="ExistingContainer" >
+                        <Entry x:Name="ExistingGroupkeyname"
+                               TextChanged="ExistingGroupkeyname_TextChanged"
+                               Style="{StaticResource EntryStyle}"
+                               />
+                    </inputLayout:SfTextInputLayout>    
+                    </StackLayout>
+                    
+
+                     <inputLayout:SfTextInputLayout Style="{StaticResource TextInputLayout}" Hint="Vorname" x:Name="VornameContainer" IsVisible="true">
+                        <Entry x:Name="Vorname"
+                               TextChanged="Vorname_TextChanged"
+                               Style="{StaticResource EntryStyle}"
+                               />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout
+                        Style="{StaticResource TextInputLayout}"
+                        Hint="Nachname" x:Name="NameContainer" IsVisible="true">
+                        <Entry x:Name="UserName"
+                               Style="{StaticResource EntryStyle}"
+                               TextChanged="UserName_TextChanged"
+                               Text="{Binding Supervisor.FirstName}" />
+                    </inputLayout:SfTextInputLayout>
+
+                   
+                    <inputLayout:SfTextInputLayout Style="{StaticResource TextInputLayout}" Hint="E-Mail" x:Name="EmailContainer" >
+                        <Entry x:Name="Email"
+                               Style="{StaticResource EntryStyle}"
+                              
+                               Keyboard="Email"
+                               TextChanged="Email_TextChanged"/>
+                    </inputLayout:SfTextInputLayout>
+
+           
+                    <inputLayout:SfTextInputLayout Style="{StaticResource TextInputLayout}" Hint="Passwort" x:Name="PasswordContainer" >
+                        <Entry  x:Name="Password"
+                                Style="{StaticResource EntryStyle}"
+                               
+                                IsPassword="True"
+                                TextChanged="Password_TextChanged"/>
+                    </inputLayout:SfTextInputLayout>
+
+                    <!-- Change to Log in if already registered -->
+                    <buttons:SfButton x:Name="SignUpButton"
+                                      HorizontalOptions="FillAndExpand"
+                                      Style="{StaticResource ButtonStyle}"
+                                      Text="REGISTRIEREN"
+                                      Margin="1,49"
+                                      Clicked="SignUpButton_Clicked"/>
+                    <Label  x:Name="LoginSuccessfullLabel"
+                            Style="{StaticResource LabelStyle}"
+                            />
+                </StackLayout>
+               
+               
+            </StackLayout>
+
+        </ScrollView>
+     </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyCare.Views.Dashboard.Settings.InviteNewMemberPage"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms">
+    <ContentPage.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </ContentPage.Resources>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Padding="-40,0,0,0">
+
+            <Label
+                  TextColor="Red"
+                    FontFamily="{StaticResource Easycareicons-Regular}"
+                   Text="&#xE90D;" />
+            <Label Style="{StaticResource NavigationBarLabelStyle}"
+                   FontFamily="{StaticResource Montserrat-Regular}"
+                   Text="Pflegegruppe verwalten" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+       <AbsoluteLayout>
+           <StackLayout Orientation="Vertical" Spacing="0" AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="SizeProportional">
+               <StackLayout BackgroundColor="#EFEFF4" Padding="30,15">
+                   <Label TextColor="#9A9A9F" FontFamily="{StaticResource Montserrat-Regular}" Text="Mitglieder  Pflegegruppe"/>
+               </StackLayout>
+               <ListView  SeparatorVisibility="None"  x:Name="ListUserView" HorizontalOptions="FillAndExpand"  HasUnevenRows="True"  ItemsSource="{Binding Usercollection}" VerticalOptions="FillAndExpand" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                       
+                             <Grid HorizontalOptions="FillAndExpand" HeightRequest="70" x:Name="Item">
+                           
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+
+                                 <Grid.ColumnDefinitions>
+                                     <ColumnDefinition Width="80*"/>
+                                      <ColumnDefinition Width="20*"/>
+                                 </Grid.ColumnDefinitions>
+             
+                            <StackLayout Grid.Column="0"  Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Orientation="Vertical" Margin="30,0">
+                                <Label Text = "{Binding Name}" TextColor="Black"
+                                       FontFamily="{StaticResource Montserrat-SemiBold}" FontSize="Body" FontAttributes="Bold" />
+                                <Label Text = "{Binding Type}" TextColor="Gray"
+                                       FontFamily="{StaticResource Montserrat-Regular}" FontSize="Default" FontAttributes="Bold" />
+
+                            </StackLayout>
+
+                             <Image Grid.Column="1" VerticalOptions="Center">
+                                   <Image.Source>
+                                       <FontImageSource Glyph="&#xe71a;" 
+                                                        Color="Gray"
+                                                       FontFamily="{StaticResource FontIcons}"
+                                                        Size="20" />
+                                   </Image.Source>
+                               </Image>
+
+                             <BoxView HeightRequest="1" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#C8C7CC"/>
+                             <Grid.GestureRecognizers>
+                            <TapGestureRecognizer    NumberOfTapsRequired="1" Tapped="UserItem_Tapped" />
+                        </Grid.GestureRecognizers>
+                        </Grid>
+
+                       
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+   
+           </StackLayout>
+            <Frame BackgroundColor="Transparent" Padding="1" WidthRequest="50"  HeightRequest="50"
+               AbsoluteLayout.LayoutBounds="0.95,0.95,80,80"
+            AbsoluteLayout.LayoutFlags="PositionProportional" 
+                                   CornerRadius="30" HasShadow="False" >
+                <syncfusion:SfButton x:Name="AddNewMember"
+                                     Clicked="AddNewMember_Clicked"
+                              CornerRadius="30"  Margin="0,10,10,0" VerticalOptions="Center"
+                              HorizontalOptions="End" BackgroundColor="Blue" FontSize="30" Text="+" WidthRequest="60"
+                              HeightRequest="60"/>
+            </Frame>
+       </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

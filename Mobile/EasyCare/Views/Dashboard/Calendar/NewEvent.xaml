@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage  xmlns:shapes="http://xamarin.com/schemas/2014/forms"
+                     xmlns="http://xamarin.com/schemas/2014/forms"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                     x:Class="EasyCare.Views.Dashboard.Calendar.NewEvent"
+                     NavigationPage.HasBackButton="True"
+                     NavigationPage.HasNavigationBar="True"
+              xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms"
+                     xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" xmlns:controls="clr-namespace:EasyCare.Controls">
+    <ContentPage.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+      </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="Header" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+             <buttons:SfButton Grid.Column="0" x:Name="Back"  Style="{StaticResource ButtonStyle}"
+                               Text="{StaticResource Back}"
+                               Command="{Binding BackCommand}" TextColor="#47F6EE"
+                               HorizontalOptions="Start"
+                                BackgroundColor="Transparent"                  />
+            <Label Text="Termin-Aufgabe erstellen" FontSize="Medium" HorizontalTextAlignment="Center"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center" 
+                   />
+
+            <Button Text="Speichern" FontSize="Body" Command="{Binding SaveCommand}" VerticalOptions="CenterAndExpand"
+                    TextColor="DodgerBlue" BackgroundColor="Transparent" HorizontalOptions="End"/>
+
+        </StackLayout>
+            <StackLayout >
+                <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+                <StackLayout Orientation="Horizontal" Margin="5,0,0,0" Spacing="0" Padding="5">
+              
+
+               <controls:BorderlessEntry  Text="{Binding Title}" TextColor="Black" Placeholder="Titel" FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                 HorizontalOptions="FillAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                   />
+               
+                </StackLayout>
+                <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+
+                <StackLayout Orientation="Horizontal" Margin="5,0,0,0" Spacing="0" Padding="5">
+                <Label Text="Ort" TextColor="{DynamicResource Gray-500}"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   />
+               
+                </StackLayout>
+                <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+               
+                <StackLayout Orientation="Horizontal" Margin="5,0,0,0" Spacing="0" Padding="5">
+
+                    <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Vertical"
+                                   VerticalOptions="CenterAndExpand">
+                    <Label Text="Start" FontAttributes="Bold"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   Grid.Column="0" />
+                    <Label Text="OPTIONAL" Margin="5,0,0,0"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="Micro"
+                                   Grid.Column="0" />
+                         
+                </StackLayout>
+                <controls:CustomTimePicker24H x:Name="StartTimePicker"
+                    Format="HH:mm" HorizontalOptions="EndAndExpand" Time="{Binding StartTime, Mode=TwoWay}" />
+                   <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="StartTime_Tapped">
+
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+
+                <StackLayout x:Name="EndTime" Orientation="Horizontal" Margin="5,0,0,0" Spacing="0" Padding="5">
+
+                    <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Vertical"
+                                   VerticalOptions="CenterAndExpand">
+                    <Label Text="Ende" FontAttributes="Bold"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   Grid.Column="0" />
+                    <Label Text="OPTIONAL" Margin="5,0,0,0"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="Micro"
+                                   Grid.Column="0" />
+                        
+                </StackLayout>
+               <controls:CustomTimePicker24H x:Name="EndTimePicker" 
+                    Format="HH:mm" BackgroundColor="Transparent"
+                   HorizontalOptions="EndAndExpand" Time="{Binding EndTime, Mode=TwoWay}" />
+                   <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="EndTime_Tapped">
+
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+
+                <StackLayout Orientation="Horizontal" Margin="5,0,0,0" Spacing="0" Padding="5">
+
+                    <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Vertical"
+                                   VerticalOptions="CenterAndExpand">
+                    <Label Text="Personen zuteilen" FontAttributes="Bold"
+                                   HorizontalOptions="Fill"
+                                   
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   Grid.Column="0" />
+                    <Label Text="OPTIONAL" Margin="5,0,0,0"
+                                   HorizontalOptions="Fill"
+                           TextColor="{DynamicResource Gray-200}"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="Micro"
+                                   Grid.Column="0" />
+                         <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding memberPopup}" ></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <buttons:SfButton BackgroundColor="Transparent" x:Name="MengeRight" Style="{StaticResource ButtonStyle}"
+                               Text="{StaticResource RightArrow}" VerticalOptions="CenterAndExpand"
+                                TextColor="{DynamicResource Gray-200}" HeightRequest="25" HorizontalOptions="End" >
+                        </buttons:SfButton>
+                   
+                </StackLayout>
+
+                <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+
+                <StackLayout Orientation="Horizontal" Margin="5,0,0,0" Spacing="0" Padding="5">
+
+                    <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Vertical"
+                                   VerticalOptions="CenterAndExpand">
+                    <Label Text="Kategorie auswahlen" FontAttributes="Bold"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   Grid.Column="0" />
+                    <Label Text="OPTIONAL" Margin="5,0,0,0"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="Micro"
+                                   Grid.Column="0" />
+                </StackLayout>
+                <buttons:SfButton BackgroundColor="Transparent" x:Name="KategorieRight" Clicked="KategorieRight_Clicked" Style="{StaticResource ButtonStyle}"
+                               Text="{StaticResource RightArrow}" VerticalOptions="CenterAndExpand"
+                                TextColor="Black" HeightRequest="25" HorizontalOptions="End" >
+                        </buttons:SfButton>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="KategorieRight_Clicked" ></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+
+               
+                <StackLayout Margin="5,0,0,5" Orientation="Horizontal" Spacing="0" Padding="5">
+                <Label Text="Erinnerung an zugeteilte Personen" FontAttributes="Bold"
+                                   HorizontalOptions="Fill"
+                       
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   Grid.Column="0" />
+                
+                   <buttons:SfButton BackgroundColor="Transparent" Clicked="ErinnerungRight_Clicked" x:Name="ErinnerungRight" Style="{StaticResource ButtonStyle}"
+                               Text="{StaticResource RightArrow}" VerticalOptions="CenterAndExpand"
+                                HeightRequest="25" HorizontalOptions="EndAndExpand" >
+                        </buttons:SfButton>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ErinnerungRight_Clicked" ></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <Picker x:Name="choice" Title="Select Days"
+                                HorizontalOptions="Fill"
+                                IsVisible="false"
+                                ItemsSource="{Binding ChoiceList}"
+                                SelectedItem="{Binding Selectedchoice}" />
+
+               <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+
+                 <StackLayout Margin="5,0,0,0" Orientation="Horizontal" Spacing="0" Padding="5">
+                <Label Text="Wiederholung" FontAttributes="Bold"
+                                   HorizontalOptions="Fill"
+                       
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   Grid.Column="0" />
+
+                      <DatePicker MinimumDate="{Binding MinDate}" Format="dd.MM.yyyy"
+                                        Date="{Binding EndDateTime}" HorizontalOptions="EndAndExpand"
+                                  VerticalOptions="CenterAndExpand"></DatePicker>
+
+                    <buttons:SfButton Clicked="Xdays_Clicked" BackgroundColor="Transparent" x:Name="EnddatumRight"
+                                      Style="{StaticResource ButtonStyle}"
+                               Text="{StaticResource RightArrow}" VerticalOptions="CenterAndExpand"
+                                 HeightRequest="25" HorizontalOptions="EndAndExpand" >
+                        </buttons:SfButton>
+                      <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Xdays_Clicked" ></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+                
+                 <Picker x:Name="Xdays" Title="Select Days"
+                                HorizontalOptions="Fill"
+                                IsVisible="false"
+                               
+                                ItemsSource="{Binding DayList}"
+                               
+                                SelectedItem="{Binding Selectedday}" />
+
+                
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

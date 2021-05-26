@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyCare.Views.UserAuthentication.LoginSignUpMainPage"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+             Title="Log In">
+        <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+     </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout
+                Margin="{core:OnPlatformOrientationThickness PhonePortrait='20,32',
+                PhoneLandscape='150,32',
+                TabletPortrait='200,50',
+                TabletLandscape='300,50',
+                Desktop='30'}"
+                Spacing="0"
+                VerticalOptions="CenterAndExpand">
+
+             <Image Source="emblem.jpg" />
+           
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Spacing="1"
+                    Margin="0,105,0,0"
+                    VerticalOptions="End">
+
+                  
+                    <buttons:SfButton
+                        x:Name="LoginButton"
+                        BorderColor="{StaticResource MischkaBlue}"
+                        BorderWidth="1"
+                        FontSize="18"
+                        HeightRequest="65"
+                        Clicked="LoginButton_Clicked"
+                        CornerRadius="45"
+                        TextColor="{StaticResource MischkaBlue}"
+                        BackgroundColor="Transparent"
+                        Text="ANMELDUNG"
+                       />
+
+                      <buttons:SfButton
+                        x:Name="RegisterButton"
+                          Clicked="RegisterButton_Clicked"
+                        FontSize="18"
+                          Margin="0,25,0,0"
+                        HeightRequest="65"
+                        CornerRadius="45"
+                        TextColor="White"
+                        BackgroundColor="{StaticResource MischkaBlue}"
+                        Text="REGISTRIERUNG"
+                       />
+                </StackLayout>
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

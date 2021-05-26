@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyCare.Views.Dashboard.Settings.SettingsPage"
+              xmlns:ffimageLoader="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ffimageTransform="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
+    <ContentPage.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </ContentPage.Resources>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Padding="-40,0,0,0">
+            <Label Style="{StaticResource NavigationBarIconStyle}"
+                   Text="{StaticResource Settings}"/>
+            <Label Style="{StaticResource NavigationBarLabelStyle}"
+                   Text="Einstellungen" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+              <StackLayout Orientation="Vertical" Spacing="0">
+
+            <StackLayout Orientation="Vertical" Margin="20">
+
+                <Grid Grid.Column="0" x:Name="ImageBackground" Margin="5,2,0,2" HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                       <Image Grid.Row="0"  Source="BackgroundLogo" 
+                                       BackgroundColor="Transparent"
+                                      HeightRequest="80"
+                                      WidthRequest="100" />
+                                      <ffimageLoader:CachedImage HeightRequest="60"  x:Name="imageSelect"
+                                            Grid.Row="0"   
+                                           
+                                          WidthRequest="60"
+                                          Margin="0,0,14,2"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="End"
+                                           Source="{Binding Imagepath}"
+                                                LoadingPlaceholder="User.png"
+                                            ErrorPlaceholder="User.png" >
+                                            <ffimageLoader:CachedImage.Transformations>
+                                                <ffimageTransform:CircleTransformation />
+                                            </ffimageLoader:CachedImage.Transformations>
+                                         </ffimageLoader:CachedImage> 
+                                </Grid>
+
+
+                
+                <Label Text="{Binding SupervisorName}" HorizontalTextAlignment="Center" FontSize="Large"/>
+                <Label Text="Administrator" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <buttons:SfButton Style="{StaticResource SettingButtonStyle}" 
+                              Command="{Binding NotificationSettingCommand}">
+                <StackLayout Orientation="Horizontal">
+                    <Image VerticalOptions="Center" WidthRequest="34" HeightRequest="24">
+                                   <Image.Source>
+                                       <FontImageSource Glyph="&#xE700;" 
+                                                        Color="Red"
+                                                        FontFamily="{StaticResource FontIcons}"
+                                                        Size="34" />
+                                   </Image.Source>
+                    </Image>
+                    <Label VerticalOptions="Center"  Style="{StaticResource SettingButtonLabelStyle}"
+                           Text="Benachrichtigungen"></Label>
+                </StackLayout>
+            </buttons:SfButton>
+
+             <buttons:SfButton Style="{StaticResource SettingButtonStyle}" Command="{Binding KontoCommand}">
+                <StackLayout Orientation="Horizontal">
+                     <Image VerticalOptions="Center" WidthRequest="34" HeightRequest="24">
+                                   <Image.Source>
+                                       <FontImageSource Glyph="&#xE70E;"
+                                                        
+                                                        Color="Red"
+                                                        FontFamily="{StaticResource FontIcons}"
+                                                        Size="24" />
+                                   </Image.Source>
+                    </Image>
+                    <Label VerticalOptions="Center"  Style="{StaticResource SettingButtonLabelStyle}"
+                           Text="Konto"></Label>
+                </StackLayout>
+            </buttons:SfButton>
+
+              <buttons:SfButton Style="{StaticResource SettingButtonStyle}" Command="{Binding InviteNewMemberCommand}">
+                <StackLayout Orientation="Horizontal">
+                    <Image VerticalOptions="Center" WidthRequest="34" HeightRequest="34">
+                                   <Image.Source>
+                                       <FontImageSource Glyph="&#xE922;" 
+                                                        Color="Red"
+                                                        FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                                   </Image.Source>
+                    </Image>
+                    <Label VerticalOptions="Center" Style="{StaticResource SettingButtonLabelStyle}"
+                           Text="Pflegegruppe verwalten"></Label>
+                </StackLayout>
+            </buttons:SfButton>
+
+            <buttons:SfButton Style="{StaticResource SettingButtonStyle}"
+                              Command="{Binding CreateSeniorCommand}">
+                <StackLayout Orientation="Horizontal">
+                      <Image VerticalOptions="Center" WidthRequest="34" HeightRequest="34">
+                                   <Image.Source>
+                                       <FontImageSource Glyph="&#xE900;" 
+                                                        Color="Red"
+                                                        FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                                   </Image.Source>
+                               </Image>
+                    <Label Style="{StaticResource SettingButtonLabelStyle}"
+                           Text="Senior(en) verwalten" VerticalOptions="Center"></Label>
+                </StackLayout>
+            </buttons:SfButton>
+
+            <buttons:SfButton Style="{StaticResource SettingButtonStyle}" >
+                <StackLayout Orientation="Horizontal">
+                       <Image VerticalOptions="Center" WidthRequest="34" HeightRequest="34">
+                                   <Image.Source>
+                                       <FontImageSource Glyph="&#xE907;" 
+                                                        Color="Gray"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                                   </Image.Source>
+                               </Image>
+                    <Label VerticalOptions="Center" TextColor="Gray" Style="{StaticResource SettingButtonLabelStyle}"
+                           Text="Pflegeleistungen berechen"></Label>
+                </StackLayout>
+            </buttons:SfButton>
+
+           
+
+            <buttons:SfButton Style="{StaticResource SettingButtonStyle}">
+                <StackLayout Orientation="Horizontal">
+                     <Image VerticalOptions="Center" WidthRequest="34" HeightRequest="34">
+                                   <Image.Source>
+                                       <FontImageSource Glyph="&#xE926;" 
+                                                        Color="Gray"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                                   </Image.Source>
+                               </Image>
+                   
+                    <Label VerticalOptions="Center" TextColor="Gray" FontFamily="{}" Style="{StaticResource SettingButtonLabelStyle}"
+                           Text="Rechtliches, Disclaimer"></Label>
+                </StackLayout>
+            </buttons:SfButton>
+
+            <buttons:SfButton Style="{StaticResource SettingButtonStyle}" IsVisible="{Binding IsSeniorNotAvailable}" 
+                              Command="{Binding AddSeniorCommand}">
+                <StackLayout Orientation="Horizontal">
+                      <Image VerticalOptions="Center" WidthRequest="34" HeightRequest="34">
+                                   <Image.Source>
+                                       <FontImageSource Glyph="&#xE900;" 
+                                                        Color="Red"
+                                                        FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                                   </Image.Source>
+                               </Image>
+                    <Label Style="{StaticResource SettingButtonLabelStyle}"
+                           Text="Add Senior" VerticalOptions="Center"></Label>
+                </StackLayout>
+            </buttons:SfButton>
+
+            <buttons:SfButton Style="{StaticResource LogoutButtonStyle}"
+                              Command="{Binding LogoutCommand}">
+                              
+                <Label Text="Ausloggen" HorizontalTextAlignment="Center"></Label>
+            </buttons:SfButton>
+        </StackLayout>
+        </ScrollView>
+      
+    </ContentPage.Content>
+</ContentPage>

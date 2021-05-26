@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" mc:Ignorable="d" xmlns:themes = "clr-namespace:EasyCare.Themes;assembly=EasyCare" xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="EasyCare.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <themes:LightTheme />
+            </ResourceDictionary.MergedDictionaries >
+        </ResourceDictionary>
+
+        <Thickness x:Key="PageMargin">5 </Thickness>
+
+       
+     <!--Pancake view-->
+    <OnPlatform x:TypeArguments="pancakeView:DropShadow"
+                x:Key="LightShadow">
+        <On Platform="iOS">
+            <On.Value>
+                <pancakeView:DropShadow Color="LightGray" Opacity="0.6"/>
+            </On.Value>
+        </On>
+    </OnPlatform>
+    
+    <Style TargetType="pancakeView:PancakeView"
+           x:Key="LightShadowPancakeViewStyle">
+        <Setter Property="Shadow" Value="{StaticResource LightShadow}">
+        </Setter>
+    </Style>
+
+
+        <!-- Colors -->
+        <Color x:Key="MischkaBlue">#003BB3</Color>
+        <Color x:Key="DeepRed">#CE2552</Color>
+        <Color x:Key="VibrantBlue">#59E8F7</Color>
+        <Color x:Key="VibrantTeal">#57F7E0</Color>
+        <Color x:Key="DeepBlue">#08144F</Color>
+        <Color x:Key="White">#FFFFFF</Color>
+        <Color x:Key="DarkBlue">#00008B</Color>
+        <Color x:Key="Black">#000000</Color>
+
+        <!-- Implicit styles -->
+        <Style TargetType="{x:Type NavigationPage}">
+            <Setter Property="BarBackgroundColor"
+                    Value="{OnPlatform iOS={StaticResource White},
+                                       Android={StaticResource VibrantTeal}}" />
+             <Setter Property="BarTextColor"
+                    Value="{OnPlatform iOS={StaticResource VibrantTeal},
+                                       Android={StaticResource White}}" />
+        </Style>
+
+        <!-- defautl content page style-->
+        <Style TargetType="{x:Type ContentPage}"
+               ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource White}"/>
+        </Style>
+
+        <!-- default button style-->
+        <Style TargetType="Button"
+               ApplyToDerivedTypes="True"
+               CanCascade="True">
+            <Setter Property="FontSize"
+                    Value="Subtitle"/>
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource MischkaBlue}" />
+            <Setter Property="TextColor"
+                    Value="{StaticResource White}" />
+            <Setter Property="VerticalOptions"
+                    Value="Center" />
+            <Setter Property="HorizontalOptions"
+                    Value="Center"/>
+            <Setter Property="FontAttributes"
+                    Value="Bold"/>
+        </Style>
+
+        <Style TargetType="buttons:SfButton"
+               ApplyToDerivedTypes="True"
+               CanCascade="True">
+            <Setter Property="FontSize"
+                    Value="Subtitle"/>
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource MischkaBlue}" />
+            <Setter Property="TextColor"
+                    Value="{StaticResource White}" />
+            <Setter Property="VerticalOptions"
+                    Value="Center" />
+            <Setter Property="HorizontalOptions"
+                    Value="Center"/>
+            <Setter Property="FontAttributes"
+                    Value="Bold"/>
+            <Setter Property="Visual"
+                    Value="Material" />
+        </Style>
+
+    </Application.Resources>
+</Application>

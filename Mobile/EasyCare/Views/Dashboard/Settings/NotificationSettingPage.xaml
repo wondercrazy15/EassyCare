@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyCare.Views.Dashboard.Settings.NotificationSettingPage"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
+    <ContentPage.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </ContentPage.Resources>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Padding="-40,0,0,0">
+            <Label Style="{StaticResource NavigationBarIconStyle}"
+                   Text="{StaticResource Notification}" />
+            <Label Style="{StaticResource NavigationBarLabelStyle}"
+                   Text="Benachrichtigungen" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="120" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+
+            <Label Text="App Benachrichtiung"
+                   VerticalTextAlignment="Center"
+                   Grid.Column="0"
+                   Grid.Row="0"></Label>
+            <syncfusion:SfSwitch HorizontalOptions="End"
+                                 VerticalOptions="Center"
+                                 Grid.Column="1"
+                                 Grid.Row="0"/>
+
+            <Label Text="SMS"
+                   VerticalTextAlignment="Center"
+                   Grid.Column="0"
+                   Grid.Row="1"></Label>
+            <syncfusion:SfSwitch HorizontalOptions="End"
+                                 VerticalOptions="Center"
+                                 Grid.Column="1"
+                                 Grid.Row="1"/>
+
+            <Label Text="Anruf Mobil"
+                   VerticalTextAlignment="Center"
+                   Grid.Column="0"
+                   Grid.Row="2"></Label>
+            <syncfusion:SfSwitch HorizontalOptions="End"
+                                 VerticalOptions="Center"
+                                 Grid.Column="1"
+                                 Grid.Row="2"/>
+
+            <Label Text="Anruf Festnetz"
+                   VerticalTextAlignment="Center"
+                   Grid.Column="0"
+                   Grid.Row="3"></Label>
+            <syncfusion:SfSwitch HorizontalOptions="End"
+                                 VerticalOptions="Center"
+                                 Grid.Column="1"
+                                 Grid.Row="3"/>
+
+            <Label Text="E-Mail"
+                   VerticalTextAlignment="Center"
+                   Grid.Column="0"
+                   Grid.Row="4"></Label>
+            <syncfusion:SfSwitch HorizontalOptions="End"
+                                 VerticalOptions="Center"
+                                 Grid.Column="1"
+                                 Grid.Row="4"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

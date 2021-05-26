@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyCare.iOS", "EasyCare.iOS.csproj", "{EE1F4CC3-0452-44B1-A4A1-E909B2B2B4D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE1F4CC3-0452-44B1-A4A1-E909B2B2B4D5}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{EE1F4CC3-0452-44B1-A4A1-E909B2B2B4D5}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{EE1F4CC3-0452-44B1-A4A1-E909B2B2B4D5}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{EE1F4CC3-0452-44B1-A4A1-E909B2B2B4D5}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{EE1F4CC3-0452-44B1-A4A1-E909B2B2B4D5}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{EE1F4CC3-0452-44B1-A4A1-E909B2B2B4D5}.Debug|iPhone.Build.0 = Debug|iPhone
+		{EE1F4CC3-0452-44B1-A4A1-E909B2B2B4D5}.Release|iPhone.ActiveCfg = Release|iPhone
+		{EE1F4CC3-0452-44B1-A4A1-E909B2B2B4D5}.Release|iPhone.Build.0 = Release|iPhone
+	EndGlobalSection
+EndGlobal

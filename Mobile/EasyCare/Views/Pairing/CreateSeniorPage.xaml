@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyCare.Views.Pairing.CreateSeniorPage"
+             xmlns:local="clr-namespace:EasyCare.Views.Pairing"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:control="clr-namespace:EasyCare.Controls"
+             xmlns:converter="clr-namespace:EasyCare.Converters"
+               xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             NavigationPage.HasNavigationBar="False"
+             Title="Einen Senior hinzufügen">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+        <!-- Implicit Stryles-->
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource White}"/>
+            <Setter Property="TextColor"
+                    Value="{StaticResource MischkaBlue}"/>
+            <Setter Property="FontAttributes"
+                    Value="Bold"/>
+            <Setter Property="FontSize"
+                    Value="Large"/>
+        </Style>
+     </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView x:Name="scrollView">
+            <StackLayout>
+                  <StackLayout HorizontalOptions="Start" Margin="10,15,0,0" >
+                         <Image>
+                                   <Image.Source>
+                                       <FontImageSource Glyph="&#xe709;" 
+                                                        Color="#64E9F7"
+                                                        FontFamily="{StaticResource FontIcons}"
+                                                        Size="24" />
+                                   </Image.Source>
+                               </Image>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="BackButton_Clicked"/>
+                        </StackLayout.GestureRecognizers>
+                 </StackLayout>
+                <StackLayout
+                Margin="{core:OnPlatformOrientationThickness PhonePortrait='20,32',
+                PhoneLandscape='150,32',
+                TabletPortrait='200,50',
+                TabletLandscape='300,50',
+                Desktop='30'}"
+                VerticalOptions="CenterAndExpand"
+                Spacing="0">
+               
+                <StackLayout    Margin="{StaticResource PageMargin}">
+                    <!--  Get senior name  -->
+                    <Label  x:Name="SeniorNameLabel"
+                            Text="Bitte gib hier den Namen des Seniors ein:"/>
+                    <inputLayout:SfTextInputLayout Style="{StaticResource TextInputLayout}" Hint="Vorname Nachname">
+                        <Entry x:Name="UserName"
+                               TextChanged="UserName_TextChanged"/>
+                    </inputLayout:SfTextInputLayout>
+                    <!--  Street and house number  -->
+                    <Label  x:Name="AddressLabel"
+                            Text="Gib hier die Adresse des Seniors ein (optional):"
+                            IsVisible="false"/>
+                    <StackLayout x:Name="StreetEditor" Orientation ="Horizontal" HorizontalOptions="StartAndExpand" IsVisible="false">
+                        <inputLayout:SfTextInputLayout Style="{StaticResource TextInputLayout}" Hint="Straße">
+                            <Entry x:Name="StreetName"
+                                   Style="{StaticResource EntryStyle}"
+                                   TextChanged="StreetName_TextChanged"/>
+                        </inputLayout:SfTextInputLayout>
+
+                        <inputLayout:SfTextInputLayout Style="{StaticResource TextInputLayout}" Hint="Hausnummer">
+                            <Entry x:Name="HouseNumber"
+                                   Style="{StaticResource EntryStyle}"
+                                   MaxLength="3"
+                                   TextChanged="HouseNumber_TextChanged"/>
+                        </inputLayout:SfTextInputLayout>
+                    </StackLayout>
+           
+                    <!--  Get postcode and city  -->
+                    <StackLayout x:Name="CityEditor" Orientation="Horizontal" HorizontalOptions="StartAndExpand" IsVisible="false">
+                        <inputLayout:SfTextInputLayout Style="{StaticResource TextInputLayout}" Hint="PLZ">
+                            <Entry x:Name="PostCode"
+                                   Style="{StaticResource EntryStyle}"
+                                   MaxLength="5"
+                                   TextChanged="PostCode_TextChanged"/>
+                        </inputLayout:SfTextInputLayout>
+
+                        <inputLayout:SfTextInputLayout Style="{StaticResource TextInputLayout}" Hint="Ort">
+                            <Entry x:Name="CityName"
+                                   Style="{StaticResource EntryStyle}"
+                                   TextChanged="CityName_TextChanged"/>
+                        </inputLayout:SfTextInputLayout>
+
+                    </StackLayout>
+
+                    <buttons:SfButton x:Name="CreateSeniorButton"
+                            Style="{StaticResource ButtonStyle}"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Senior anlegen"
+                            Clicked="CreateSeniorButton_Clicked"/>
+                </StackLayout>
+                    <!-- This can be deleted later on, as it is not needes as part of settings, for now we need it for navigation-->
+                    <Label IsVisible="false"
+                           Text="Geschafft! Du kannst jetzt eine Senior-Watch hinzufügen oder zum Hauptmenü gehen"/>
+                    <StackLayout x:Name="Buttons" HorizontalOptions="Center">
+                        <buttons:SfButton x:Name="MainScreenButton"
+                                          Style="{StaticResource ButtonStyle}"
+                                          Text="Hauptmenü"
+                                          Margin="20,20,20,10"
+                                          IsVisible="false"
+                                          Clicked="MainScreenButton_Clicked"/>
+                        <buttons:SfButton x:Name="AddDeviceButton"
+                                          Style="{StaticResource ButtonStyle}"
+                                          Text="Watch hinzufügen"
+                                          Margin="20,10,20,20"
+                                          IsVisible="false"
+                                          Clicked="AddDeviceButton_Clicked"/>
+                    </StackLayout>
+            </StackLayout>
+            </StackLayout>
+                
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

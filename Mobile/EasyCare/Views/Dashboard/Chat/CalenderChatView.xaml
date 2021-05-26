@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local1:CustomGrid  xmlns:local1="clr-namespace:EasyCare.Views.Dashboard.Chat"
+                    xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="EasyCare.Views.Dashboard.Chat.CalenderChatView"
+                    xmlns:local="clr-namespace:EasyCare.Views.Dashboard.Chat"
+                    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms" xmlns:local2="clr-namespace:EasyCare.Behaviors.Calendar" xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms" xmlns:ffimageLoader="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:ffimageTransform="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+                  BackgroundColor="#DCDEE8"
+                  RowSpacing="15"
+                    Padding="0,0,0,5"
+                    HeightRequest="350"
+                   VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                  ColumnSpacing="15">
+    
+    <local1:CustomGrid.Resources>
+        <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </local1:CustomGrid.Resources>
+    <local:CustomGrid.RowDefinitions>
+       
+     
+    </local:CustomGrid.RowDefinitions>
+    <StackLayout x:Name="Document" BackgroundColor="White" Orientation="Vertical" Grid.Row="0" Grid.Column="0" Spacing="0">
+        <syncfusion:SfCalendar x:Name="calendar"
+                               ShowInlineEvents="True"
+                                    InlineViewMode="Agenda"
+                                    AgendaViewHeight="0"
+                                 OnCalendarTapped="calendar_OnCalendarTapped"
+                                    Grid.Row="0"
+                               VerticalOptions="FillAndExpand"
+                                MaximumEventIndicatorCount="1"
+                                    SelectedDate="{Binding SelectedDate}"
+                                 HoldCommand="{Binding NavigateToAddEventsCommand}"
+                                    SelectionMode="SingleSelection"
+                               DataSource="{Binding Events}"
+                               HorizontalOptions="FillAndExpand"
+                              
+                               ShowNavigationButtons="True">
+              <syncfusion:SfCalendar.HeaderView>
+                    <Grid Padding="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                
+                        <buttons:SfButton Grid.Column="0" x:Name="Left" Style="{StaticResource ButtonStyle}"
+                               Text="{StaticResource LeftArrow}" 
+                                Clicked="Left_Clicked" HorizontalOptions="StartAndExpand" TextColor="Black"
+                                BackgroundColor="AliceBlue"                  />
+                        <Label x:Name="Month" Text="Month"  FontAttributes="Bold" Grid.Column="1" HorizontalOptions="End" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" />
+                        <Label x:Name="Year" Text="year" FontAttributes="Bold" Grid.Column="2" HorizontalOptions="Start" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" />
+                        <buttons:SfButton Grid.Column="3" x:Name="Right" Clicked="Right_Clicked" Style="{StaticResource ButtonStyle}"
+                               Text="{StaticResource RightArrow}" 
+                                TextColor="Black" BackgroundColor="AliceBlue" HorizontalOptions="End" >
+                        </buttons:SfButton>
+                    </Grid>
+                </syncfusion:SfCalendar.HeaderView>
+            </syncfusion:SfCalendar>
+         <StackLayout x:Name="EventList"  BackgroundColor="#DCDEE8">
+             <buttons:SfButton  x:Name="Back" Margin="5,2,0,0" Style="{StaticResource ButtonStyle}" HeightRequest="25"
+                                WidthRequest="25" CornerRadius="13"
+                               Text="{StaticResource LeftArrow}" 
+                                Clicked="Back_Clicked" HorizontalOptions="StartAndExpand" TextColor="Black"
+                                BackgroundColor="AliceBlue"                  />
+
+                                    <ListView    x:Name="ListView" HorizontalOptions="FillAndExpand"
+                                                 SeparatorVisibility="None" HasUnevenRows="True"
+                                                 ItemSelected="ListView_ItemSelected"
+                                                 BackgroundColor="Transparent"
+                                                 ItemsSource="{Binding EventCollection}"
+                                                 VerticalOptions="FillAndExpand" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <cards:SfCardView BorderColor="LightGray" BackgroundColor="#F7F7F7"  BorderWidth="1" Margin="10,0,10,5" HasShadow="False">
+                             <Grid HeightRequest="60" x:Name="Item">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Margin="10" VerticalOptions="Center" Orientation="Vertical" Grid.Column="0">
+
+                               <Image>
+                                   <Image.Source>
+                                       <FontImageSource Glyph="{Binding Icon}" 
+                                                        Color="#323853"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="44" />
+                                   </Image.Source>
+                               </Image>
+
+                            </StackLayout>
+                            <StackLayout VerticalOptions="Center" Orientation="Horizontal" Grid.Column="1">
+                               
+                                <StackLayout Spacing="0" VerticalOptions="CenterAndExpand">
+                                    <StackLayout Orientation="Horizontal" Spacing="0" IsVisible="{Binding IsCalenderEvent}">
+                                        <Label Text="{Binding StartTime}" TextColor="Red" FontSize="Caption"></Label>
+                                         <Label Text="-" TextColor="Red" Margin="0,-5,0,0"
+                                               VerticalTextAlignment="Start"  VerticalOptions="StartAndExpand" FontSize="Default"></Label>
+                                        <Label Text="{Binding EndTime}" TextColor="Red" FontSize="Caption"></Label>
+                                    </StackLayout>
+                                    <Label Text = "{Binding Subject}" TextColor="#323853" FontSize="Body" FontAttributes="Bold" />
+                                    
+                                </StackLayout>
+                                <Grid Grid.Column="0" x:Name="ImageBackground" Margin="5,2,0,2" 
+                                      HorizontalOptions="EndAndExpand"
+                                            VerticalOptions="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                       <Image Grid.Row="0"  Source="BackgroundLogo" IsVisible="{Binding IsProfileAvailable}"
+                                       BackgroundColor="Transparent"
+                                      HeightRequest="70"
+                                      WidthRequest="90" />
+                                      <ffimageLoader:CachedImage HeightRequest="45"  x:Name="imageSelect"
+                                            Grid.Row="0"
+                                           WidthRequest="40"
+                                          Margin="0,0,10,0"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="End"
+                                           LoadingPlaceholder="User.png"
+                                                                 ErrorPlaceholder="User.png"
+                                           Source="{Binding Imagepath}" >
+                                            <ffimageLoader:CachedImage.Transformations>
+                                                <ffimageTransform:CircleTransformation />
+                                            </ffimageLoader:CachedImage.Transformations>
+                                         </ffimageLoader:CachedImage> 
+                                </Grid>
+                            </StackLayout>
+                          
+                        </Grid>
+
+                       
+                        </cards:SfCardView>
+                       
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+            
+
+                    </StackLayout>
+    </StackLayout>
+
+
+</local1:CustomGrid>

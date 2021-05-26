@@ -1,0 +1,81 @@
+﻿<local1:CustomGrid  xmlns:local1="clr-namespace:EasyCare.Views.Dashboard.Chat"
+                    xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyCare.Views.Dashboard.Chat.PulseChatView"
+                    xmlns:local="clr-namespace:EasyCare.Views.Dashboard.Chat" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+                  BackgroundColor="#DCDEE8"
+                  RowSpacing="15"
+                    Padding="15,15,15,15"
+                   HeightRequest="290"
+                   VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                  ColumnSpacing="5">
+    <local1:CustomGrid.Resources>
+        <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </local1:CustomGrid.Resources>
+    <local:CustomGrid.RowDefinitions>
+        <RowDefinition Height="auto"></RowDefinition>
+     
+    </local:CustomGrid.RowDefinitions>
+
+    <local:CustomGrid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        
+    </local:CustomGrid.ColumnDefinitions>
+
+    <StackLayout VerticalOptions="Start" WidthRequest="95" HeightRequest="95"  Orientation="Vertical" Grid.Row="0" Grid.Column="0" Spacing="0">
+        <Frame WidthRequest="95" Margin="5" HeightRequest="25"  VerticalOptions="FillAndExpand" CornerRadius="14" BorderColor="#0A144F" HorizontalOptions="Fill" Padding="10">
+             <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE91D;" 
+                                                        Color="#0A144F"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+       
+
+       
+    </StackLayout>
+
+    <StackLayout  Orientation="Vertical" Grid.Row="0" Grid.Column="1" Spacing="0">
+        <Frame HeightRequest="35"   VerticalOptions="FillAndExpand" CornerRadius="14"  HorizontalOptions="Fill" >
+           
+              <StackLayout HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
+             
+                  <Label HorizontalTextAlignment="Center" Text="AKTUELL" FontAttributes="Bold"  TextColor="#406CC6"/>
+          
+                  <Label Text="61" HorizontalTextAlignment="Center" FontSize="22" FontAttributes="Bold"  TextColor="#0A144F"/>
+
+            </StackLayout>
+        </Frame>
+       <Frame Margin="0,12"  HeightRequest="35"   VerticalOptions="FillAndExpand" CornerRadius="14"  HorizontalOptions="Fill" >
+           
+              <StackLayout HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
+             
+                  <Label HorizontalTextAlignment="Center" Text="RUHEPULS" FontAttributes="Bold"  TextColor="#406CC6"/>
+          
+                  <Label Text="53" HorizontalTextAlignment="Center" FontSize="22" FontAttributes="Bold"  TextColor="#0A144F"/>
+
+            </StackLayout>
+        </Frame>
+        <Frame HeightRequest="35"   VerticalOptions="FillAndExpand" CornerRadius="14"  HorizontalOptions="Fill" >
+           
+              <StackLayout HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
+             
+                  <Label HorizontalTextAlignment="Center" Text="DURCHSCHNITT/MAX." FontAttributes="Bold"  TextColor="#406CC6"/>
+          
+                  <Label Text="65/140" HorizontalTextAlignment="Center" FontSize="22" FontAttributes="Bold"  TextColor="#0A144F"/>
+
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+    
+</local1:CustomGrid>

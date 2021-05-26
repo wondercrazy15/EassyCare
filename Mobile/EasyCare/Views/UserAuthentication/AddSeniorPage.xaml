@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyCare.Views.UserAuthentication.AddSeniorPage"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:control="clr-namespace:EasyCare.Controls"
+             xmlns:converter="clr-namespace:EasyCare.Converters"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+             NavigationPage.HasNavigationBar="True"
+             Title="Add Senior"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <NavigationPage.TitleView>
+        <StackLayout Spacing="0">
+            <StackLayout Orientation="Horizontal" Margin="0,0,50,0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+                    <Label VerticalOptions="Center"  FontSize="20"
+                           Text="Add Senior"></Label>
+
+                </StackLayout>
+            <Image BackgroundColor="Transparent" HorizontalOptions="End" WidthRequest="50"></Image>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+     </ContentPage.Resources>
+
+
+     <ContentPage.Content>
+        <ScrollView x:Name="scrollView">
+                <StackLayout
+                Margin="20,0"
+                Spacing="0"
+                VerticalOptions="Start">
+
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  Margin="{StaticResource PageMargin}">
+                    <!--  Get name from user  -->
+                   
+                    
+                     <inputLayout:SfTextInputLayout Style="{StaticResource TextInputLayout}"
+                                                    Hint="Vorname" x:Name="VornameContainer" IsVisible="true">
+                        <Entry x:Name="Vorname"
+                               TextChanged="Vorname_TextChanged"
+                               Style="{StaticResource EntryStyle}"
+                               />
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout
+                        Style="{StaticResource TextInputLayout}"
+                        Hint="Nachname" x:Name="NameContainer" IsVisible="true">
+                        <Entry x:Name="UserName"
+                               Style="{StaticResource EntryStyle}"
+                               TextChanged="UserName_TextChanged"
+                               Text="{Binding Supervisor.FirstName}" />
+                    </inputLayout:SfTextInputLayout>
+
+                   
+                    <inputLayout:SfTextInputLayout Style="{StaticResource TextInputLayout}" Hint="E-Mail" x:Name="EmailContainer" >
+                        <Entry x:Name="Email"
+                               Style="{StaticResource EntryStyle}"
+                              
+                               Keyboard="Email"
+                               TextChanged="Email_TextChanged"/>
+                    </inputLayout:SfTextInputLayout>
+
+           
+                    <inputLayout:SfTextInputLayout Style="{StaticResource TextInputLayout}" Hint="Passwort" x:Name="PasswordContainer" >
+                        <Entry  x:Name="Password"
+                                Style="{StaticResource EntryStyle}"
+                               
+                                IsPassword="True"
+                                TextChanged="Password_TextChanged"/>
+                    </inputLayout:SfTextInputLayout>
+
+                    <!-- Change to Log in if already registered -->
+                    <buttons:SfButton x:Name="AddSeniorButton"
+                                      HorizontalOptions="FillAndExpand"
+                                      Style="{StaticResource ButtonStyle}"
+                                      Text="Add Senior"
+                                      Margin="1,49"
+                                      Clicked="AddSeniorButton_Clicked"/>
+                    <Label  x:Name="AddSeniorSuccessfullLabel"
+                            Style="{StaticResource LabelStyle}"
+                            />
+                </StackLayout>
+               
+               
+            </StackLayout>
+
+        </ScrollView>
+     </ContentPage.Content>
+</ContentPage>

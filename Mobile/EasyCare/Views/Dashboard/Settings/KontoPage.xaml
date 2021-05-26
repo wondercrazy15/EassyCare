@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:ffimageLoader="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ffimageTransform="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" x:Class="EasyCare.Views.Dashboard.Settings.KontoPage">
+     <ContentPage.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </ContentPage.Resources>
+    <NavigationPage.TitleView>
+        <StackLayout Spacing="0">
+            <StackLayout Orientation="Horizontal" Margin="0,0,50,0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+
+                    <Image VerticalOptions="Center" WidthRequest="34" HeightRequest="24">
+                                   <Image.Source>
+                                       <FontImageSource Glyph="&#xE70E;"
+                                                        
+                                                        Color="Red"
+                                                        FontFamily="{StaticResource FontIcons}"
+                                                        Size="24" />
+                                   </Image.Source>
+                    </Image>
+                    <Label VerticalOptions="Center"  Style="{StaticResource SettingButtonLabelStyle}"
+                           Text="Konto"></Label>
+
+                </StackLayout>
+            <Image  HorizontalOptions="End" WidthRequest="50"></Image>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+         <StackLayout>
+           <StackLayout Orientation="Vertical" Margin="0,20,0,20">
+
+               <Grid Grid.Column="0" x:Name="ImageBackground" Margin="5,2,0,2" HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                       <Image Grid.Row="0"  Source="BackgroundLogo" 
+                                       BackgroundColor="Transparent"
+                                      HeightRequest="80"
+                                      WidthRequest="100" />
+                                      <ffimageLoader:CachedImage HeightRequest="60"  x:Name="imageSelect"
+                                            Grid.Row="0"   
+                                           WidthRequest="60"
+                                          Margin="0,0,14,2"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="End"
+                                           Source="{Binding Imagepath}"
+                                                LoadingPlaceholder="User.png"
+                                            ErrorPlaceholder="User.png" >
+                                            <ffimageLoader:CachedImage.Transformations>
+                                                <ffimageTransform:CircleTransformation />
+                                            </ffimageLoader:CachedImage.Transformations>
+                                         </ffimageLoader:CachedImage>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer  Tapped="TapGestureRecognizer_Tapped">
+
+                        </TapGestureRecognizer>
+                    </Grid.GestureRecognizers>
+                                </Grid>
+               
+            </StackLayout>
+            <StackLayout  >
+                 <BoxView Margin="0,0,0,0" HorizontalOptions="FillAndExpand" HeightRequest="1"  Color="LightGray" />
+               <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                   <Label Text="Name" HorizontalOptions="StartAndExpand" FontSize="Body"></Label>
+                   <Label Text="{Binding SupervisorName}" HorizontalOptions="CenterAndExpand" FontSize="Body"></Label>
+               </StackLayout>
+                <BoxView Margin="0,0,0,0" HorizontalOptions="FillAndExpand" HeightRequest="1"  Color="LightGray" />
+    
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

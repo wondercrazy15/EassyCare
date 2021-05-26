@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageLoader="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:ffimageTransform="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" x:Class="EasyCare.Views.Dashboard.Chat.ChatProfileChangePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <NavigationPage.TitleView>
+       <StackLayout Spacing="0">
+            <StackLayout Orientation="Horizontal" Margin="0,0,50,0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Label  FontAttributes="Bold" VerticalOptions="Center" FontSize="Body"
+                           Text="Update Group Info"></Label>
+                    
+                </StackLayout>
+            <Image  HorizontalOptions="End" WidthRequest="50"></Image>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Vertical" Margin="0,20,0,10">
+                <Frame CornerRadius="60" 
+                       HeightRequest="120"
+                       WidthRequest="120"
+                       HorizontalOptions="Center"
+                       Padding="0"
+                       IsClippedToBounds="True">
+
+                    <ffimageLoader:CachedImage HeightRequest="120"
+                                              Aspect="AspectFill"
+                                           WidthRequest="120"
+                                           x:Name="GroupImage"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            
+                                            LoadingPlaceholder="Group.png"
+                                            ErrorPlaceholder="Group.png">
+                        <ffimageLoader:CachedImage.Transformations>
+                            <ffimageTransform:CircleTransformation />
+                        </ffimageLoader:CachedImage.Transformations>
+                    </ffimageLoader:CachedImage>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer  Tapped="TapGestureRecognizer_Tapped">
+
+                        </TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+            </StackLayout>
+            <StackLayout Margin="20" >
+
+                <Entry x:Name="GroupName" HorizontalOptions="FillAndExpand" Style="{StaticResource EntryStyle}" FontSize="Body"></Entry>
+              <syncfusion:SfButton
+                        x:Name="UpdateButton"
+                        FontSize="18"
+                         VerticalOptions="End"
+                        HeightRequest="40"
+                        CornerRadius="10"
+                        TextColor="White"
+                        Clicked="UpdateButton_Clicked"
+                        BackgroundColor="{StaticResource MischkaBlue}"
+                        Text="Update"
+                       />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

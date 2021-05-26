@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>fde8dd0d-18ad-436d-800b-76d875947901</UserSecretsId>
+    <AssemblyName>EasyCare.Web</AssemblyName>
+    <RootNamespace>EasyCare.Web</RootNamespace>
+    <PackageId>EasyCare.Web</PackageId>
+    <Authors>Macrix</Authors>
+    <Company>Macrix</Company>
+    <Product>Macrix</Product>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.7" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Graph" Version="3.12.0" />
+    <PackageReference Include="Microsoft.Graph.Auth" Version="1.0.0-preview.5" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.16.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Azure.NotificationHubs" Version="3.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.6" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+    <PackageReference Include="Twilio" Version="5.47.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EasyCare.Core.Domain\EasyCare.Core.Domain.csproj" />
+    <ProjectReference Include="..\EasyCare.Core.Dto\EasyCare.Core.Dto.csproj" />
+    <ProjectReference Include="..\EasyCare.Core.Infrastructure\EasyCare.Core.Infrastructure.csproj" />
+    <ProjectReference Include="..\EasyCare.Core.Services\EasyCare.Core.Services.csproj" />
+  </ItemGroup>
+</Project>

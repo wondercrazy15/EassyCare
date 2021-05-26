@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Migrations\20200823190900_UpdateSpGetDrugsByDate.cs" />
+      <Compile Remove="Migrations\20200823190900_UpdateSpGetDrugsByDate.Designer.cs" />
+      <Compile Remove="Migrations\20200823191312_UpdateSpGetDrugsByDate.cs" />
+      <Compile Remove="Migrations\20200823191312_UpdateSpGetDrugsByDate.Designer.cs" />
+      <Compile Remove="Migrations\20200902100510_spGetUserByEmail.cs" />
+      <Compile Remove="Migrations\20200902100510_spGetUserByEmail.Designer.cs" />
+      <Compile Remove="Migrations\20200902101016_AddFieldGroup.cs" />
+      <Compile Remove="Migrations\20200902101016_AddFieldGroup.Designer.cs" />
+      <Compile Remove="Migrations\20200909161842_AddCalendarSupervisorsEntity.cs" />
+      <Compile Remove="Migrations\20200909161842_AddCalendarSupervisorsEntity.Designer.cs" />
+      <Compile Remove="Migrations\20200910110910_UpdateCalendarSupervisorsEntity.cs" />
+      <Compile Remove="Migrations\20200910110910_UpdateCalendarSupervisorsEntity.Designer.cs" />
+      <Compile Remove="Migrations\20200910111149_UpdateCalendarSupervisorsEntity.cs" />
+      <Compile Remove="Migrations\20200910111149_UpdateCalendarSupervisorsEntity.Designer.cs" />
+      <Compile Remove="Migrations\20201001163543_33w.cs" />
+      <Compile Remove="Migrations\20201001163543_33w.Designer.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.6" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Core\EasyCare.Core\EasyCare.Core.csproj" />
+      <ProjectReference Include="..\EasyCare.Core.Domain\EasyCare.Core.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

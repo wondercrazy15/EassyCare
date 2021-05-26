@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:chat="clr-namespace:EasyCare.ViewModels.Dashboard.Monitoring"
+              xmlns:customcontrol="clr-namespace:EasyCare.Controls"
+             x:Class="EasyCare.Views.Dashboard.Monitoring.AddNewMedikamentePage">
+
+  
+    <ContentPage.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+      </ContentPage.Resources>
+    
+        <NavigationPage.TitleView>
+            <StackLayout x:Name="Header" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            
+            <Label Text="neues Medikament" FontSize="Medium" HorizontalTextAlignment="Center"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center" 
+                   />
+
+            <Button Text="Speichern" FontSize="Body" Command="{Binding SaveCommand}" VerticalOptions="CenterAndExpand"
+                    TextColor="DodgerBlue" BackgroundColor="Transparent" HorizontalOptions="End"/>
+
+        </StackLayout>
+            </NavigationPage.TitleView>
+    <ContentPage.Content>
+         <StackLayout >
+                  <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+                <StackLayout Orientation="Horizontal" Margin="5,0,0,0" Spacing="0" Padding="5">
+                <Label Text="Bezeichnung"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   Grid.Column="0" />
+                <Entry Placeholder="Namen eingeben"
+                       Text="{Binding Name}"
+                                   FontSize="Body"
+                                   HorizontalOptions="EndAndExpand"
+                                   VerticalOptions="CenterAndExpand" />
+                    <buttons:SfButton BackgroundColor="Transparent" x:Name="Right" Style="{StaticResource ButtonStyle}"
+                               Text="{StaticResource RightArrow}" VerticalOptions="CenterAndExpand"
+                                TextColor="Black" HeightRequest="25" HorizontalOptions="End" >
+                        </buttons:SfButton>
+                </StackLayout>
+                  <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+               
+                <StackLayout Orientation="Horizontal" Margin="5,0,0,0" Spacing="0" Padding="5">
+                <Label Text="Dosis"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="CenterAndExpand"
+                       FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                       Grid.Column="0" />
+                <Entry Placeholder="z.B. taglich"
+                       FontSize="Body"
+                       Keyboard="Numeric"
+                       Text="{Binding DosisDay}"
+                       HorizontalOptions="EndAndExpand"
+                       VerticalOptions="CenterAndExpand" />
+                 <customcontrol:CustomTimePicker24H  Format="HH:mm" Time="{Binding DoseTime}"></customcontrol:CustomTimePicker24H>
+                    <buttons:SfButton BackgroundColor="Transparent" x:Name="DosisRight" Style="{StaticResource ButtonStyle}"
+                               Text="{StaticResource RightArrow}" VerticalOptions="CenterAndExpand"
+                                TextColor="Black" HeightRequest="25" HorizontalOptions="End" >
+                        </buttons:SfButton>
+                </StackLayout>
+                  <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+
+                <StackLayout Orientation="Horizontal" Margin="5,0,0,0" Spacing="0" Padding="5">
+                <Label Text="Bild"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   Grid.Column="0" />
+                <Label Text="Foto ersteilen" IsVisible="{Binding isImageLable}"
+                                   FontSize="Medium" 
+                                   HorizontalOptions="EndAndExpand"
+                                   VerticalOptions="CenterAndExpand" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BildRight_Clicked" ></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                    </Label>
+                    <Image x:Name="imageSelect" HorizontalOptions="EndAndExpand" Source="{Binding Image}" HeightRequest="50" WidthRequest="50"
+                                   VerticalOptions="CenterAndExpand" IsVisible="{Binding isImage}"></Image>
+                    <buttons:SfButton BackgroundColor="Transparent" x:Name="BildRight"
+                                      Clicked="BildRight_Clicked" Style="{StaticResource ButtonStyle}"
+                               Text="{StaticResource RightArrow}" VerticalOptions="CenterAndExpand"
+                                TextColor="Black" HeightRequest="25" HorizontalOptions="End" >
+                        </buttons:SfButton>
+                </StackLayout>
+                  <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+
+                <StackLayout Margin="5,0,0,0" Orientation="Horizontal" Spacing="0" Padding="5">
+                <Label Text="Menge pro Box"
+                       TextColor="{DynamicResource Gray-200}"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   Grid.Column="0" />
+                <Label Text="z.B. 30 Eilnheiten"
+                                   FontSize="Medium"
+                       TextColor="{DynamicResource Gray-200}"
+                                   HorizontalOptions="EndAndExpand"
+                                   VerticalOptions="CenterAndExpand" />
+                    <buttons:SfButton BackgroundColor="Transparent" TextColor="{DynamicResource Gray-200}" x:Name="MengeRight" Style="{StaticResource ButtonStyle}"
+                               Text="{StaticResource RightArrow}" VerticalOptions="CenterAndExpand"
+                                HeightRequest="25" HorizontalOptions="End" >
+                        </buttons:SfButton>
+                </StackLayout>
+                  <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+
+                <StackLayout Margin="5,0,0,0" Orientation="Horizontal" Spacing="0" Padding="5">
+                <Label Text="Startdatum"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   Grid.Column="0" />
+                <DatePicker MinimumDate="{Binding MinDate}" Format="dd.MM.yyyy"
+                                        Date="{Binding SelectedDate}"
+                            HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"></DatePicker>
+                   
+                </StackLayout>
+                  <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+
+                <StackLayout Margin="5,0,0,0" Orientation="Horizontal" Spacing="0" Padding="5">
+                <Label Text="Enddatum"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   Grid.Column="0" />
+                
+                    <DatePicker MinimumDate="{Binding MinDate}" Format="dd.MM.yyyy"
+                                        Date="{Binding SelectedEndDate}" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"></DatePicker>
+                </StackLayout>
+                  <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+
+                <StackLayout Margin="5,0,0,5" Orientation="Horizontal" Spacing="0" Padding="5">
+                <Label Text="Erinnerung Nachkauf"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   Grid.Column="0" />
+                
+                   <!--<Switch x:Name="ErinnerungSwicher" IsToggled="{Binding ErinnerungSwicherIsToggled}" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />-->
+                </StackLayout>
+                  <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+
+                <StackLayout Margin="5,0,0,5" Orientation="Horizontal" Spacing="0" Padding="5">
+                <Label Text="Einnahme-Erinnerung(Senior)"
+                                   HorizontalOptions="Fill"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="{OnIdiom Tablet=Large,Phone=Medium }"
+                                   Grid.Column="0" />
+                
+                   <!--<Switch x:Name="EinnahmeSwicher" IsToggled="{Binding EinnahmeSwicherIsToggled}"  VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" />-->
+                </StackLayout>
+                  <BoxView HeightRequest="1" Color="{DynamicResource Gray-200}" ></BoxView>
+
+
+            </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

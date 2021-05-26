@@ -1,0 +1,76 @@
+﻿<local1:CustomGrid  xmlns:local1="clr-namespace:EasyCare.Views.Dashboard.Chat"
+                    xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyCare.Views.Dashboard.Chat.LocationChatView"
+                    xmlns:local="clr-namespace:EasyCare.Views.Dashboard.Chat" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+                  BackgroundColor="#DCDEE8"
+                  RowSpacing="15"
+                    Padding="15,15,15,15"
+                    HeightRequest="140"
+                   VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                  ColumnSpacing="5">
+    <local1:CustomGrid.Resources>
+        <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </local1:CustomGrid.Resources>
+    <local:CustomGrid.RowDefinitions>
+        <RowDefinition Height="*"></RowDefinition>
+     
+    </local:CustomGrid.RowDefinitions>
+
+    <local:CustomGrid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        
+    </local:CustomGrid.ColumnDefinitions>
+
+    <StackLayout  Orientation="Vertical" Grid.Row="0" Grid.Column="0" Spacing="0">
+        <Frame WidthRequest="95" Margin="5" HeightRequest="125"  VerticalOptions="FillAndExpand" CornerRadius="14" BorderColor="#0A144F" HorizontalOptions="Fill" Padding="10">
+             <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE90F;" 
+                                                        Color="#0A144F"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+       
+
+       
+    </StackLayout>
+
+    <StackLayout  Orientation="Vertical" Grid.Row="0" Grid.Column="1" Spacing="0">
+        <Frame  Padding="10" BorderColor="Red" HeightRequest="72" VerticalOptions="FillAndExpand" CornerRadius="14"  HorizontalOptions="Fill" >
+            <StackLayout Orientation="Vertical">
+              <StackLayout Orientation="Horizontal">
+                 <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE90F;"
+                                       
+                                                        Color="Red"
+                                                       FontFamily="{StaticResource Easycareicons-Regular}"
+                                                        Size="22" />
+                  </Image.Source>
+            </Image>
+                  <Label Text="STANDORT" FontAttributes="Bold" VerticalOptions="Center" TextColor="Red"/>
+            </StackLayout>
+
+                  <Label Text="Bereich verlassen" FontSize="22" FontAttributes="Bold" VerticalOptions="Center" TextColor="#0A144F"/>
+
+                 <Label Text="ort" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" TextColor="#B9BED8"/>
+            </StackLayout>
+          
+           
+
+         
+        </Frame>
+        
+    </StackLayout>
+
+    
+</local1:CustomGrid>

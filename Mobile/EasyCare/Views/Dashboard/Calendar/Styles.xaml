@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary
+    x:Class="EasyCare.Views.Dashboard.Calendar.Styles"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:control="clr-namespace:EasyCare.Controls"
+    xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms">
+
+    
+    <x:String x:Key="LeftArrow">&#xe709;</x:String>
+     <x:String x:Key="RightArrow">&#xe71a;</x:String>
+     <x:String x:Key="Menu">&#xe719;</x:String>
+    <x:String x:Key="Back">&#xe709;</x:String>
+   
+
+
+     <!--  Common style for Main SfButton Header Icon Label -->
+    <Style x:Key="MainButtonHeaderIconLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-800}" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontFamily" Value="{StaticResource easycare_icons}"/>
+    </Style>
+
+    <!--  Common style for Main SfButton Value Label -->
+    <Style x:Key="MainButtonValueLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-800}" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <!-- Default text-->
+        <!--<Setter Property="Text" Value="Placeholder"/>-->
+    </Style>
+
+    <!--  Common style for Main SfButton Description Label  -->
+    <Style x:Key="MainButtonDescriptionLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-400}" />
+        <Setter Property="FontSize" Value="16" />
+        <!-- Default text-->
+        <Setter Property="Text" Value="Placeholder"/>
+    </Style>
+
+     <Style x:Key="NavigationBarButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="WidthRequest" Value="38" />
+        <Setter Property="HeightRequest" Value="38" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="FontFamily" Value="{StaticResource FontIcons}"/>
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderWidth" Value="0" />
+    </Style>
+
+    <Style x:Key="ButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="WidthRequest" Value="38" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="FontFamily" Value="{StaticResource FontIcons}"/>
+        <Setter Property="BackgroundColor" Value="AliceBlue" />
+        <Setter Property="BorderWidth" Value="0" />
+    </Style>
+
+      <Style x:Key="ButtonECIconStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource Easycareicons-Regular}"/>
+    </Style>
+    
+
+    <Style x:Key="NavigationBarRedButtonStyle" TargetType="buttons:SfButton"
+           BasedOn="{StaticResource NavigationBarButtonStyle}">
+        <Setter Property="BackgroundColor" Value="{StaticResource LightRed}" />
+        <Setter Property="CornerRadius" Value="100" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<local1:CustomGrid  xmlns:local1="clr-namespace:EasyCare.Views.Dashboard.Chat"
+                    xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyCare.Views.Dashboard.Chat.AttachmentChatView"
+                    xmlns:local="clr-namespace:EasyCare.Views.Dashboard.Chat" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+                  BackgroundColor="#DCDEE8"
+                  RowSpacing="15"
+                    Padding="15,10,15,10"
+                    HeightRequest="100"
+                   VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                  ColumnSpacing="15">
+    <local1:CustomGrid.Resources>
+        <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Styles.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </local1:CustomGrid.Resources>
+    <local:CustomGrid.RowDefinitions>
+       
+     
+    </local:CustomGrid.RowDefinitions>
+
+    <local:CustomGrid.ColumnDefinitions>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+    </local:CustomGrid.ColumnDefinitions>
+
+     <!--Document Attachment-->
+    <StackLayout x:Name="Document" Orientation="Vertical" Grid.Row="0" Grid.Column="0" Spacing="0">
+        <Frame Margin="5" HeightRequest="50" HasShadow="False"  VerticalOptions="FillAndExpand"
+               CornerRadius="14" HorizontalOptions="Fill" Padding="10">
+              <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE71e;" 
+                                                         Color="#323853"
+                                                       FontFamily="{StaticResource FontIcons}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+        <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="DocumentTapGestureRecognizer_Tapped"
+                                                    CommandParameter="{Binding .}"
+                                                   />
+       </StackLayout.GestureRecognizers>
+    </StackLayout>
+
+     <!--Speaker-->
+    <StackLayout  Orientation="Vertical" Grid.Row="0" Grid.Column="1" Spacing="0">
+        <Frame Margin="5" Padding="10" BorderColor="LightGray" HasShadow="False"  HeightRequest="50" VerticalOptions="FillAndExpand" CornerRadius="14"  HorizontalOptions="Fill" >
+             <Image>
+                    <Image.Source>
+                      <FontImageSource Glyph="&#xE722;" 
+                                                        Color="LightGray"
+                                                       FontFamily="{StaticResource FontIcons}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+       
+    </StackLayout>
+
+     <!--Camera-->
+    <StackLayout x:Name="Camera" Orientation="Vertical" Grid.Row="0" Grid.Column="2" Spacing="0">
+        <Frame Margin="5" Padding="10" HasShadow="False" HeightRequest="50" VerticalOptions="FillAndExpand" CornerRadius="14"  HorizontalOptions="Fill" >
+              <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE71d;" 
+                                                        Color="#323853"
+                                                       FontFamily="{StaticResource FontIcons}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+         <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="CameraTapGestureRecognizer_Tapped"
+                                                    CommandParameter="{Binding .}"
+                                                   />
+       </StackLayout.GestureRecognizers>
+    </StackLayout>
+
+    <!--Gallary-->
+    <StackLayout x:Name="Gallary" Orientation="Vertical" Grid.Row="0" Grid.Column="3" Spacing="0">
+        <Frame Margin="5" HasShadow="True" Padding="10"  HeightRequest="50"
+               VerticalOptions="FillAndExpand" CornerRadius="14"  HorizontalOptions="Fill" >
+              <Image>
+                  <Image.Source>
+                      <FontImageSource Glyph="&#xE731;" 
+                                                        Color="#323853"
+                                                       FontFamily="{StaticResource FontIcons}"
+                                                        Size="34" />
+                  </Image.Source>
+            </Image>
+        </Frame>
+       <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="GallaryTapGestureRecognizer_Tapped"
+                                                    CommandParameter="{Binding .}"
+                                                   />
+       </StackLayout.GestureRecognizers>
+    </StackLayout>
+
+
+</local1:CustomGrid>

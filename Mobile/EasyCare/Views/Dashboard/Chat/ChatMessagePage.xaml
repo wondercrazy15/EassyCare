@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sfChat="clr-namespace:Syncfusion.XForms.Chat;assembly=Syncfusion.SfChat.XForms" xmlns:syncTheme="clr-namespace:Syncfusion.XForms.Themes;assembly=Syncfusion.Core.XForms" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             x:Class="EasyCare.Views.Dashboard.Chat.ChatMessagePage"
+
+             xmlns:controls="clr-namespace:EasyCare.Controls"
+             xmlns:local="clr-namespace:EasyCare.Views.Dashboard.Chat" xmlns:ffimageLoader="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:ffimageTransform="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             Title="Chat">
+    
+   <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <local:ChatTemplateSelector x:Key="MessageTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <StackLayout Spacing="0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="Center" Padding="0,2,0,2" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                
+                <Grid Grid.Column="0" HorizontalOptions="StartAndExpand"
+                                        VerticalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                       <Image Grid.Row="0"  Source="BackgroundLogo" 
+                                       BackgroundColor="Transparent"
+                                              VerticalOptions="Start"
+                                      HeightRequest="70"
+                                      WidthRequest="90" />
+                                      <ffimageLoader:CachedImage HeightRequest="25" x:Name="chatImage"
+                                           Grid.Row="0"   
+                                           WidthRequest="25"
+                                           Margin="0,0,10,2"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="End"
+                                            ErrorPlaceholder="Group.png"
+                                           LoadingPlaceholder="Group.png"
+                                            >
+                                            <ffimageLoader:CachedImage.Transformations>
+                                                <ffimageTransform:CircleTransformation />
+                                            </ffimageLoader:CachedImage.Transformations>
+                                         </ffimageLoader:CachedImage> 
+                                </Grid>
+            <Label x:Name="Title" Text="TestGeneral" FontSize="Large" HorizontalTextAlignment="Center"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalTextAlignment="Center" 
+                   />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Image_Tapped">
+
+                    </TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <Image WidthRequest="100"></Image>
+            <!--<buttons:SfButton  Style="{StaticResource NavigationBarButtonStyle}"
+                               Text="{StaticResource Menu}"  />-->
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content >
+          <Grid RowSpacing="0" 
+           ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+             <RowDefinition Height="1" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+              <StackLayout Grid.Row="0" Margin="10" VerticalOptions="EndAndExpand"
+                                 HorizontalOptions="CenterAndExpand" 
+                                 IsVisible="{Binding IsLoad}">
+                   <ActivityIndicator  IsRunning="{Binding IsLoad}"
+                                 IsVisible="{Binding IsLoad}" ></ActivityIndicator>
+              <Label Text="Loading.."></Label>
+              </StackLayout>
+
+             <controls:ExtendedListView IsVisible="{Binding IsVisibleMsg}" BackgroundColor="AliceBlue"
+                 Grid.Row="0"
+                 ItemTemplate="{StaticResource MessageTemplateSelector}" 
+                 ItemsSource="{Binding Messages}" 
+                 
+                 ItemSelected="ChatList_ItemSelected" 
+                 ItemTapped="OnListTapped"
+                 Rotation="180" 
+                 FlowDirection="RightToLeft"
+                 HasUnevenRows="True" x:Name="ChatList"
+                 VerticalOptions="FillAndExpand"
+                 
+                 SeparatorColor="Transparent">
+         </controls:ExtendedListView>
+
+             
+
+               <local:ChatInputBarView  Grid.Row="2"  Padding="5"  x:Name="chatInput"
+                                       VerticalOptions="EndAndExpand" BackgroundColor="White" HeightRequest="50">
+
+              </local:ChatInputBarView>
+       
+    </Grid>
+
+     
+    </ContentPage.Content>
+</ContentPage>

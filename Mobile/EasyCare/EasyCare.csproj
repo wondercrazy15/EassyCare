@@ -1,0 +1,120 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="5.2.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1142" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+    <PackageReference Include="Azure.Messaging.EventHubs" Version="5.1.0" />
+    <PackageReference Include="System.Text.Json" Version="4.7.2" />
+    <PackageReference Include="Azure.Messaging.EventHubs.Processor" Version="5.1.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.16.1" />
+    <PackageReference Include="Syncfusion.Licensing" Version="18.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="18.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.DataSource" Version="18.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="18.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBadgeView" Version="18.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.Cards" Version="18.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="18.2.0.46" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="4.7.0.1142" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChat" Version="18.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="18.2.0.46" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="18.2.0.46" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Twilio" Version="5.46.0" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.1.823" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.0.0.691" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.0.0" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="18.2.0.46" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Data\" />
+    <Folder Include="Crypto\" />
+    <Folder Include="Themes\" />
+    <Folder Include="Converters\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\SignUpPage\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\BottomNavigation\" />
+    <Folder Include="Models\BottomNavigation\" />
+    <Folder Include="DataService\" />
+    <Folder Include="ViewModels\Chat\" />
+    <Folder Include="Models\Chat\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Behaviors\" />
+    <Folder Include="Behaviors\Chat\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Views\Pairing\" />
+    <Folder Include="Views\Dashboard\" />
+    <Folder Include="Views\Dashboard\Chat\" />
+    <Folder Include="Views\Dashboard\Calendar\" />
+    <Folder Include="Views\Dashboard\Monitoring\" />
+    <Folder Include="ViewModels\Dashboard\" />
+    <Folder Include="ViewModels\Dashboard\Monitoring\" />
+    <Folder Include="ViewModels\Dashboard\Chat\" />
+    <Folder Include="ViewModels\Dashboard\Calendar\" />
+    <Folder Include="Services\" />
+    <Folder Include="Views\Dashboard\Settings\" />
+    <Folder Include="ViewModels\Dashboard\Settings\" />
+    <Folder Include="Behaviors\Calendar\" />
+    <Folder Include="Models\Monitoring\" />
+    <Folder Include="Interface\" />
+    <Folder Include="Views\Dashboard\Chat\Cells\" />
+    <Folder Include="Models\Settings\" />
+    <Folder Include="B2C\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\navigation.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Dashboard\Chat\Cells\ChatProfileChangePage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\Calender\CalendarPage.xaml.cs">
+      <DependentUpon>CalendarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Dashboard\Settings\NotificationSettingPage.xaml.cs">
+      <DependentUpon>NotificationSettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Dashboard\Chat\ChatMainPage.xaml.cs">
+      <DependentUpon>ChatMainPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\EasyCare.Core\EasyCare.Core.csproj" />
+    <ProjectReference Include="..\..\Web\EasyCare.Client\EasyCare.Client.csproj" />
+    <ProjectReference Include="..\..\Web\EasyCare.Core.Dto\EasyCare.Core.Dto.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\10.3.1.4\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v9.0\Mono.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\13.14.1.39\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

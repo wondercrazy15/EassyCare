@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+            xmlns:local="clr-namespace:EasyCare.Views.Dashboard"
+            xmlns:chat="clr-namespace:EasyCare.Views.Dashboard.Chat"
+            xmlns:calendar="clr-namespace:EasyCare.Views.Dashboard.Calendar"
+            xmlns:monitoring="clr-namespace:EasyCare.Views.Dashboard.Monitoring"
+            xmlns:main="clr-namespace:EasyCare"
+            x:Class="EasyCare.Views.Dashboard.MainPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            SelectedTabColor="{StaticResource DarkBlue}"
+            UnselectedTabColor="{StaticResource Black}"
+            NavigationPage.HasNavigationBar="True"
+            BarBackgroundColor="White">
+    <!-- Resources -->
+        <TabbedPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Chat/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+      </TabbedPage.Resources>
+    <!-- Add a Navigation Page to the Tabbed page -->
+    <NavigationPage Title="Kalender">
+        <!-- Actual Page -->
+        <x:Arguments>
+            <calendar:CalendarPage BindingContext="{Binding CalendarTab}"/>
+        </x:Arguments>
+        <!-- Icon to be shown at the Toolbar -->
+        <NavigationPage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource FontIcons}"
+                             Glyph="{StaticResource Calendar}"
+                             Size="30"/>
+        </NavigationPage.IconImageSource>
+    </NavigationPage>
+
+    <!-- Add a Navigation Page to the Tabbed page -->
+    <NavigationPage Title="Monitoring">
+        <!-- Actual Page -->
+        <x:Arguments>
+            <monitoring:MonitoringOverviewPage BindingContext="{Binding MonitoringTab}"/>
+        </x:Arguments>
+        <!-- Icon to be shown at the Toolbar -->
+        <NavigationPage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource easycare_icons}"
+                             Glyph="{StaticResource EC_Home}"
+                             Size="30"/>
+        </NavigationPage.IconImageSource>
+
+    </NavigationPage>
+
+    <!-- Add a Navigation Page to the Tabbed page -->
+    <NavigationPage Title="Chat" >
+        <!-- Actual Page -->
+        <x:Arguments>
+            <chat:ChatMainPage BindingContext="{Binding ChatTab}"/>
+        </x:Arguments>
+        <!-- Icon to be shown at the Toolbar -->
+        <NavigationPage.IconImageSource>
+            <FontImageSource FontFamily="{StaticResource easycare_icons}"
+                             Glyph="{StaticResource EC_Chat}"
+                             Size="30"/>
+        </NavigationPage.IconImageSource>
+    </NavigationPage>
+
+
+</TabbedPage>

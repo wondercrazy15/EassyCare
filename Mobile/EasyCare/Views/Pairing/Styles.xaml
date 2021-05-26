@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    x:Class="EasyCare.Views.Pairing.Styles"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    xmlns:control="clr-namespace:EasyCare.Controls"
+    xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms">
+
+    <Color x:Key="Transparent">Transparent</Color>
+
+    <Color x:Key="EntryPlaceholderColor">#A0FFFFFF</Color>
+    <Color x:Key="BorderBackgroundColor">#20FFFFFF</Color>
+    <Color x:Key="GradientStartColor">#012E8B</Color>
+    <Color x:Key="GradientEndColor">#3F0041</Color>
+    <Color x:Key="FacebookBlue">#4267B2</Color>
+    
+    <x:String x:Key="DropDownButtonIcon">&#xe70b;</x:String>
+    <x:String x:Key="AvatarIcon">&#xe723;</x:String>
+
+    <!--  Common style for content pages  -->
+    <Style x:Key="ContentPageStyle" TargetType="ContentPage">
+        <Setter Property="BackgroundImageSource">
+            <OnPlatform
+                x:TypeArguments="ImageSource"
+                Android="LoginBackground.png"
+                WinPhone="LoginBackground.png" />
+        </Setter>
+    </Style>
+
+    <!--  Common style for entries  -->
+    <Style x:Key="TextInputLayout" TargetType="inputLayout:SfTextInputLayout">
+        <Setter Property="FocusedColor" Value="{StaticResource MischkaBlue}"/>
+        <Setter Property="UnfocusedColor" Value="{StaticResource MischkaBlue}"/>
+        <Setter Property="ContainerType" Value="None"/>
+    </Style>
+
+     <Style x:Key="EntryStyle" TargetType="Entry">
+         <Setter Property="PlaceholderColor" Value="DarkGray" />
+         <Setter Property="BackgroundColor" Value="White" />
+         <Setter Property="TextColor" Value="Black" />
+         <Setter Property="FontSize" Value="18" />
+         <Setter Property="FontAttributes" Value="Bold"/>
+         <Setter Property="WidthRequest" Value="125" />
+         <Setter Property="HeightRequest" Value="25" />
+         <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+    </Style>
+
+    <!--  Common style for buttons  -->
+    <Style x:Key="ButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BackgroundColor" Value="{StaticResource MischkaBlue}"/>
+        <Setter Property="BorderWidth" Value="0" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="CornerRadius" Value="25" />
+        <Setter Property="Margin"   Value="20"/>
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+    <!--  Common style for flat buttons  -->
+    <Style x:Key="SfFlatButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{StaticResource DeepRed}" />
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat-SemiBold}" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+
+    <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="LineHeight" Value="1"/>
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="{StaticResource MischkaBlue}"/>
+    </Style>
+
+</ResourceDictionary>

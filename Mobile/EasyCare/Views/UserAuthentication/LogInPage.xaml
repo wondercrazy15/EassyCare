@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyCare.Views.UserAuthentication.LogInPage"
+              NavigationPage.HasNavigationBar="False"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+             Title="Log In">
+        <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+     </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Margin="{core:OnPlatformOrientationThickness PhonePortrait='20,32',
+                PhoneLandscape='150,32',
+                TabletPortrait='200,50',
+                TabletLandscape='300,50',
+                Desktop='30'}"
+                Spacing="0">
+             <StackLayout HorizontalOptions="Start" Margin="0,15,0,0" >
+                         <Image>
+                                   <Image.Source>
+                                       <FontImageSource Glyph="&#xe709;" 
+                                                        Color="#64E9F7"
+                                                        FontFamily="{StaticResource FontIcons}"
+                                                        Size="24" />
+                                   </Image.Source>
+                               </Image>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="BackButton_Clicked"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+            <StackLayout
+                
+                VerticalOptions="CenterAndExpand">
+            <StackLayout  Margin="{StaticResource PageMargin}" >
+                  
+                  <Image Source="emblem.jpg" />
+                 
+                 <inputLayout:SfTextInputLayout Margin="0,25,0,0" Style="{StaticResource TextInputLayout}" Hint="Email">
+                     <Entry x:Name="Email"
+                            Style="{StaticResource EntryStyle}"
+                            Keyboard="Email"
+                            TextChanged="Email_TextChanged"/>
+                 </inputLayout:SfTextInputLayout>
+
+                <inputLayout:SfTextInputLayout Style="{StaticResource TextInputLayout}" Hint="Passwort">
+                     <Entry  x:Name="Password"
+                             Style="{StaticResource EntryStyle}"
+                             IsPassword="True"
+                             TextChanged="Password_TextChanged"/>
+                </inputLayout:SfTextInputLayout>
+               
+                <buttons:SfButton x:Name="LogInButton"
+                                  Style="{StaticResource ButtonStyle}"
+                                  Text="Anmelden"
+                                  Margin="0,45,0,0"
+                                  Clicked="LogInButton_Clicked"/>
+                <Label  x:Name="LoginSuccessfullLabel"
+                        HorizontalTextAlignment="Center"
+                        FontSize="Medium"
+                        BackgroundColor="White"
+                        TextColor="Red"
+                        IsVisible="false"/>
+
+                
+                </StackLayout>
+               
+            </StackLayout>
+        </StackLayout>
+        
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

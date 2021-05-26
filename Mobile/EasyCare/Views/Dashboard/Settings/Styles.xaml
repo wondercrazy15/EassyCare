@@ -1,0 +1,88 @@
+﻿<ResourceDictionary
+    x:Class="EasyCare.Views.Dashboard.Settings.Styles"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:control="clr-namespace:EasyCare.Controls"
+    xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms">
+
+    <Color x:Key="Transparent">Transparent</Color>
+
+    <!--  Font Icon Text  -->
+    <x:String x:Key="Home">&#xe706;</x:String>
+    <x:String x:Key="Calendar">&#xe742;</x:String>
+    <x:String x:Key="Chat">&#xe73b;</x:String>
+    <x:String x:Key="Notification">&#xe700;</x:String>
+    <x:String x:Key="Settings">&#xe72b;</x:String>
+
+    <!-- EasyCare Icons-->
+    <x:String x:Key="EC_Supervisor">&#xe900;</x:String>
+    <x:String x:Key="EC_Phone">&#xe901;</x:String>
+    <x:String x:Key="EC_Phone2">&#xe910;</x:String>
+    <x:String x:Key="EC_Tree">&#xe911;</x:String>
+    <x:String x:Key="EC_Fall">&#xe912;</x:String>
+    <x:String x:Key="EC_HeartRateMeasure">&#xe913;</x:String>
+    <x:String x:Key="EC_Block">&#xe914;</x:String>
+    <x:String x:Key="EC_Block2">&#xe915;</x:String>
+    <x:String x:Key="EC_Chat">&#xe923;</x:String>
+    <x:String x:Key="EC_OK">&#xe924;</x:String>
+    <x:String x:Key="EC_Cloud">&#xe925;</x:String>
+    <x:String x:Key="EC_Home">&#xe926;</x:String>
+    <x:String x:Key="EC_Lock">&#xe927;</x:String>
+    <x:String x:Key="EC_WiFi">&#xe935;</x:String>
+    <x:String x:Key="EC_Net">&#xe936;</x:String>
+    <x:String x:Key="EC_Heart">&#xe937;</x:String>
+    <x:String x:Key="EC_Senior">&#xe938;</x:String>
+    <x:String x:Key="EC_Location">&#xe93c;</x:String>
+    <x:String x:Key="EC_Temperature">&#xe93d;</x:String>
+    <x:String x:Key="EC_Clock">&#xe93e;</x:String>
+    <x:String x:Key="EC_World">&#xe93f;</x:String>
+    <x:String x:Key="EC_Cloud2">&#xe940;</x:String>
+
+    <Style x:Key="NavigationBarIconStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource FontIcons}"/>
+        <Setter Property="TextColor" Value="Red" />
+    </Style>
+
+    <Style x:Key="NavigationBarLabelStyle" TargetType="Label">
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
+    <!-- Style for setting buttons -->
+    <Style x:Key="SettingButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="Padding" Value="20" />
+        <Setter Property="BorderColor" Value="#F7F7FD" />
+        <Setter Property="BorderWidth" Value="0.2" />
+    </Style>
+
+    <!-- Style for setting buttons icon-->
+    <Style x:Key="SettingButtonIconStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontFamily" Value="{StaticResource FontIcons}"/>
+        <Setter Property="TextColor" Value="Red" />
+    </Style>
+
+    <!-- Style for setting buttons icon-->
+    <Style x:Key="SettingButtonECIconStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontFamily" Value="{StaticResource easycare_icons}"/>
+        <Setter Property="TextColor" Value="Red" />
+    </Style>
+
+    <!-- Style for setting buttons label -->
+    <Style x:Key="SettingButtonLabelStyle" TargetType="Label">
+        <Setter Property="Padding" Value="10,0,0,0" />
+    </Style>
+
+    <!-- Style for log out button -->
+    <Style x:Key="LogoutButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="BackgroundColor" Value="LightGray" />
+        <Setter Property="Padding" Value="20" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="CornerRadius" Value="30" />
+        <Setter Property="Margin" Value="15, 30, 15, 0" />
+    </Style>
+
+</ResourceDictionary>

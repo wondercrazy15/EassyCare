@@ -6,6 +6,7 @@ namespace EasyCare.Services
 {
     public class TwilioToken
     {
+        // TODO: remove all these secrets from version control. Easy to find when searching GitHub
         public string twilioAccountSid = "AC1cf545dd9abaa20cec5aefbbc9a092c4";
         public string twilioApiKey = "SKcf54685dc05c54a9e15d5b970a1af798";
         public string twilioApiSecret = "ec4gh4GESBr3gGHO5ndD8OAq4oC0Fn7Y";
